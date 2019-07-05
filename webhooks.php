@@ -72,8 +72,8 @@ echo "OK";
 
 //Get DB
 				$server = "118.172.127.41";
-				$suser = "root";
-				$spassword = "";
+				$suser = "botadmin";
+				$spassword = "ktb5570";
 				$database = "ktb-line-bot";
 
 				$conn = mysqli_connect($server,$suser,$spassword,$database);
