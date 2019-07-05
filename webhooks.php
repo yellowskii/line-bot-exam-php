@@ -67,6 +67,9 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
+
+echo "OK";
+
 //Get DB
 				$server = "118.172.127.41";
 				$suser = "root";
@@ -90,5 +93,5 @@ if (!is_null($events['events'])) {
 					$dbtext = "คุณ ".$row["fname"]." ".$row["lname"]." นัดคลินิก ".$row["clinic"]." กับแพทย์ ".$row["doctor"]." คือวันที่ ".$row["appoint_date"];
 				}
 
-echo "OK";
+
 echo $dbtext;
