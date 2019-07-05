@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 				$server = "118.172.127.41";
 				$suser = "root";
 				$spassword = "";
-				$database = "ktb-lin-bot";
+				$database = "ktb-line-bot";
 
 				$conn = mysqli_connect($server,$suser,$spassword,$database);
 
