@@ -10,9 +10,10 @@
 				$conn = mysqli_connect($server,$suser,$spassword,$database);
 
 
-				if (mysqli_connect_errno()) {
-				    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-				}
+				if(mysqli_connect_error()) 
+					echo "Connection Error."; 
+				    else
+					echo "Database Connection Successfully."; 
 				
 				$strSQL = "SELECT HN, fname, lname, cid,  appoint_date, clinic, doctor, tel, note 
 						   FROM medapp
