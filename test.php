@@ -6,9 +6,9 @@
 				$suser = "root";
 				$spassword = "";
 				$database = "ktb-line-bot";
-				$port = "3306";
+			
 
-				$conn = mysqli_connect($server,$suser,$spassword,$database,$port);
+				$conn = mysqli_connect($server,$suser,$spassword,$database);
 
 
 				if(mysqli_connect_error()) 
