@@ -12,7 +12,7 @@
 
 
 				if(mysqli_connect_error()) 
-					echo "Connection Error."; 
+					echo "Connection Error. ".mysqli_connect_error(); 
 				    else
 					echo "Database Connection Successfully."; 
 				
