@@ -16,7 +16,7 @@
 				    else
 					echo "Database Connection Successfully."; 
 				
-				$strSQL = "SELECT HN, clinic, doctor, appoint_date
+				$strSQL = "SELECT medapp.HN, medapp.clinic, medapp.doctor, medapp.appoint_date
 						FROM medapp
 						JOIN account
 						ON medapp.HN = account.HN";
