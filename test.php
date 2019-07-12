@@ -1,5 +1,5 @@
 <?php
-		echo "WELCOME TO JURASSIC PARK";
+		echo "WELCOME TO JURASSIC PARK<br><br>";
 
 		//Get DB
 				$server = "118.172.127.41";
@@ -16,12 +16,14 @@
 				    else
 					echo "Database Connection Successfully."; 
 				
-				$strSQL = "SELECT HN
-						   FROM medapp";
+				$strSQL = "SELECT HN, clinic, doctor, appoint_date
+						FROM medapp
+						JOIN account
+						ON medapp.HN = account.HN";
 			
 				$result = mysqli_query($conn,$strSQL);
-				while($row = mysqli_fetch_assoc($result)) {
-					$dbtext = "คุณ ".$row["HN"];
+				while($row = mysqli_fetch_array($result)) {
+					$dbtext = "HN ".$row["0"]." ไ้ด้มีนัดที่ ".$row["1"]." กับหมอ ".$row["2"]." ในวันที่ ".$row["3"];
 				}
 
 
