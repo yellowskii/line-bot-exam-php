@@ -64,7 +64,7 @@
   function initializeApp(data) {
 
       document.getElementById('uid').textContent = data.context.userId;
-
+  }
 /*
       $(document).ready(function(){
 
@@ -79,7 +79,7 @@
             );
 
             */
-      };
+
 
 
   </script>
