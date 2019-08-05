@@ -22,7 +22,7 @@
 
         <div class="form-group">
           <label for="uid">LINEID</label>
-          <input type="text" class="form-control" name="uid" id="uid" value="13458791" required>
+          <input type="text" class="form-control" name="uid" id="uid" required>
 
         </div>
 
@@ -55,6 +55,17 @@
 	<script src="js/popper.js"></script>
   <script>
 
+  window.onload = function (e) {
+      liff.init(function (data) {
+          initializeApp(data);
+      });
+  };
+
+  function initializeApp(data) {
+
+      document.getElementById('uid').textContent = data.context.userId;
+
+/*
       $(document).ready(function(){
 
           liff.init(
@@ -67,8 +78,8 @@
             }
             );
 
-            $("#uid").val(liff.userId);
-      });
+            */
+      };
 
 
   </script>
