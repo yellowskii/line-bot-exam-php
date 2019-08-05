@@ -11,6 +11,30 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <title>ระบบลงทะเบียนการใช้งานKTB LINE bot</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script>
+
+  window.onload = function (e) {
+      liff.init(function (data) {
+          initializeApp(data);
+      });
+  };
+
+  function initializeApp(data) {
+
+      document.getElementById('uid').textContent = data.context.userId;
+  }
+
+
+
+  </script>
+
   </head>
   <body>
 
@@ -47,41 +71,6 @@
 			</form>
 	</div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-   <script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/popper.js"></script>
-  <script>
 
-  window.onload = function (e) {
-      liff.init(function (data) {
-          initializeApp(data);
-      });
-  };
-
-  function initializeApp(data) {
-
-      document.getElementById('uid').textContent = data.context.userId;
-  }
-/*
-      $(document).ready(function(){
-
-          liff.init(
-            data => {
-              // Now you can call LIFF API
-              const userId = data.context.userId;
-            },
-            err => {
-              // LIFF initialization failed
-            }
-            );
-
-            */
-
-
-
-  </script>
   </body>
 </html>
