@@ -55,8 +55,27 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
    <script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/popper.js"></script>
+  <script>
+
+      $(function () {
+          liff.init(
+            data => {
+              // Now you can call LIFF API
+              const userId = data.context.userId;
+            },
+            err => {
+              // LIFF initialization failed
+            }
+            );
+
+            $("#uid").val(userId);
+      });
+
+
+  </script>
   </body>
 </html>
