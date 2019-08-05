@@ -32,12 +32,6 @@
 
         </div>
 
-			  <div class="form-group">
-					<label for="cid">ชื่อ นามสกุล</label>
-					<input type="text" class="form-control" name="cid" id="cid" required>
-
-			  </div>
-
         <div class="form-group">
 					<label for="date">เลขประจำตัวประชาชน</label>
 					<input type="text" class="form-control" name="cid" id="cid" required>
@@ -61,7 +55,8 @@
 	<script src="js/popper.js"></script>
   <script>
 
-      $(function () {
+      $(document).ready(function(){
+
           liff.init(
             data => {
               // Now you can call LIFF API
