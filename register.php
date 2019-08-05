@@ -67,7 +67,7 @@
             }
             );
 
-            $("#uid").val("userId");
+            $("#uid").val(liff.userId);
       });
 
 
