@@ -14,7 +14,7 @@
   </head>
   <body>
 
-  <div class="container border border-primary m-auto p-5 p-2" style="width: 860px;">
+  <div class="container border border-primary m-auto p-5 p-2" >
 
     <h1 class="text-center" >ระบบลงทะเบียนการใช้งานKTB LINE bot</h1>
 
@@ -32,12 +32,12 @@
 
         <div class="form-group">
 					<label for="date">เลขประจำตัวประชาชน</label>
-					<input type="text" class="form-control" name="cid" id="cid" required>
+					<input type="text" class="form-control" name="cid" id="cid" maxlength = "13" required>
 
 			  </div>
 
 				 <div class="text-center">
-				  <button type="submit" class="btn btn-primary" name="submit">ค้นหา</button><br><br>
+				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
 
 
 				 </div>

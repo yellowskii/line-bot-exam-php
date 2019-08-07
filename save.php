@@ -34,7 +34,7 @@
   </head>
   <body>
 
-  <div class="container border border-primary m-auto p-5 p-2" style="width: 860px;">
+  <div class="container border border-primary m-auto p-5 p-2" >
 
 <?php
     $strSQL = "INSERT INTO account (fname, cid, line_id)
