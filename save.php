@@ -50,6 +50,7 @@ VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
 
 ?>
 
+<a href="#" onclick="history.go(-1)">Go Back</a>
 
 	</div>
 

@@ -25,9 +25,13 @@
 
 
         <div class="form-group">
-          <label for="name">ชื่อ นามสกุล</label>
-          <input type="text" class="form-control" name="name" id="name" required>
+          <label for="name">ชื่อ</label>
+          <input type="text" class="form-control" name="fname" id="fname" required>
+        </div>
 
+        <div class="form-group">
+          <label for="name">นามสกุล</label>
+          <input type="text" class="form-control" name="lname" id="lname" required>
         </div>
 
         <div class="form-group">
