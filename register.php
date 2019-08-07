@@ -11,30 +11,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
     <title>ระบบลงทะเบียนการใช้งานKTB LINE bot</title>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script>
-
-  window.onload = function (e) {
-      liff.init(function (data) {
-          initializeApp(data);
-      });
-  };
-
-  function initializeApp(data) {
-
-      document.getElementById('uid').value = data.context.userId;
-  }
-
-
-
-  </script>
-
   </head>
   <body>
 
@@ -42,13 +18,11 @@
 
     <h1 class="text-center" >ระบบลงทะเบียนการใช้งานKTB LINE bot</h1>
 
-	<form  id="myForm" action="result.php" method="post" >
+	<form  id="myForm" action="save.php" method="post" >
 
-        <div class="form-group">
-          <label for="uid">LINEID</label>
-          <input type="text" class="form-control" name="uid" id="uid" required>
 
-        </div>
+          <input type="hidden" class="form-control" name="uid" id="uid" required>
+
 
         <div class="form-group">
           <label for="name">ชื่อ นามสกุล</label>
@@ -71,6 +45,28 @@
 			</form>
 	</div>
 
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/popper.js"></script>
+<script>
+
+window.onload = function (e) {
+    liff.init(function (data) {
+        initializeApp(data);
+    });
+};
+
+function initializeApp(data) {
+
+    document.getElementById('uid').value = data.context.userId;
+}
+
+
+
+</script>
 
   </body>
 </html>
