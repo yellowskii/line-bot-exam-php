@@ -37,22 +37,23 @@
 
   <div class="container border border-primary m-auto p-5 p-2" style="width: 860px;">
 
-    <h1 class="text-center" >ระบบลงทะเบียนการใช้งานKTB LINE bot</h1>
 <?php
     $strSQL = "SELECT medapp.HN, medapp.clinic, medapp.doctor, medapp.appoint_date
         FROM medapp
         JOIN account
         ON medapp.HN = account.HN";
 
-    $result = mysqli_query($conn,$strSQL);
-    while($row = mysqli_fetch_array($result)) {
-      $dbtext = "HN ".$row["0"]." ไ้ด้มีนัดที่ ".$row["1"]." กับหมอ ".$row["2"]." ในวันที่ ".$row["3"];
+        "INSERT INTO account (fname, cid, line_id)
+VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
+
+    if(mysqli_query($conn,$strSQL)){
+
+        echo "ลงทะเบียนการใช้งานเสร็จสิ้น";
+
+    } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-
-echo $dbtext."<br>";
-
-echo "รับ ".$_POST["uid"]." ".$_POST["name"]." ".$_POST["cid"];
-
+    
 ?>
 
 
