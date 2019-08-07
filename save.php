@@ -1,7 +1,6 @@
 <!doctype html>
 
 <?php
-		echo "WELCOME TO JURASSIC PARK<br><br>";
 
 		//Get DB
 				$server = "118.172.127.41";
@@ -38,12 +37,7 @@
   <div class="container border border-primary m-auto p-5 p-2" style="width: 860px;">
 
 <?php
-    $strSQL = "SELECT medapp.HN, medapp.clinic, medapp.doctor, medapp.appoint_date
-        FROM medapp
-        JOIN account
-        ON medapp.HN = account.HN";
-
-        "INSERT INTO account (fname, cid, line_id)
+    $strSQL = "INSERT INTO account (fname, cid, line_id)
 VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
 
     if(mysqli_query($conn,$strSQL)){
@@ -53,7 +47,7 @@ VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
     } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-    
+
 ?>
 
 
