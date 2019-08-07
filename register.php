@@ -28,7 +28,7 @@
 
   function initializeApp(data) {
 
-      document.getElementById('uid').textContent = data.context.userId;
+      document.getElementById('uid').value = data.context.userId;
   }
 
 
