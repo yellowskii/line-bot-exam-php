@@ -51,7 +51,7 @@ VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
 ?>
 
 <div class="text-center">
- <button type="submit" class="btn btn-primary" name="back" onclick="history.go(-1);" >ตกลง</button><br><br>
+ <button type="submit" class="btn btn-primary" name="back" onclick="history.go(-1);" >กลับ</button><br><br>
 </div>
 
 	</div>
