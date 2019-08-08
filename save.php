@@ -1,6 +1,10 @@
 <!doctype html>
 
 <?php
+			if (!isset($_POST["cid"]){
+				header("location:test.php");
+  			exit(0);
+			}
 
 		//Get DB
 				$server = "118.172.127.41";
