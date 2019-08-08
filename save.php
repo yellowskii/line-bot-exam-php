@@ -1,7 +1,7 @@
 <!doctype html>
 
 <?php
-			if (!isset($_POST["cid"]){
+			if (!isset($_POST["cid"])){
 				header("location:test.php");
   			exit(0);
 			}
