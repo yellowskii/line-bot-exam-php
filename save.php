@@ -37,21 +37,38 @@
   <div class="container border border-primary m-auto p-5 p-2" >
 
 <?php
-    $strSQL = "INSERT INTO account (fname, cid, line_id)
-VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
+		$strSQL = "SELECT *
+								FROM account
+								WHERE line_id = '".$_POST["cid"]."' ;"
+		$result = mysqli_query($conn,$strSQL);
+		if (mysqli_num_rows($result) > 0){
 
-    if(mysqli_query($conn,$strSQL)){
-
-        echo "ลงทะเบียนการใช้งานเสร็จสิ้น";
-
-    } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
+			echo "ผู้ใช้หมายเลขนี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ";
 ?>
 
 <div class="text-center">
  <button type="submit" class="btn btn-primary" name="back" onclick="history.go(-1);" >กลับ</button><br><br>
+</div>
+
+	<?php
+		} else{
+
+				$strSQL = "INSERT INTO account (fname, lname, cid, line_id)
+									VALUES ('".$_POST["fname"]."', '".$_POST["lname"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
+
+				if(mysqli_query($conn,$strSQL)){
+
+						echo "ลงทะเบียนการใช้งานเสร็จสิ้น";
+
+				} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+
+		}
+
+?>
+<div class="text-center">
+<button type="button" class="btn btn-danger" id="closebutton">ปิด</button>
 </div>
 
 	</div>
@@ -61,6 +78,23 @@ VALUES ('".$_POST["name"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/popper.js"></script>
+<script>
 
+window.onload = function (e) {
+    liff.init(function (data) {
+        initializeApp(data);
+    });
+};
+
+function initializeApp(data) {
+
+	document.getElementById('closebutton').addEventListener('click', function () {
+			liff.closeWindow();
+	});
+}
+
+
+
+</script>
   </body>
 </html>
