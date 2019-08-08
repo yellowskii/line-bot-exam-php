@@ -39,7 +39,7 @@
 <?php
 		$strSQL = "SELECT *
 								FROM account
-								WHERE line_id = '".$_POST["cid"]."' ;"
+								WHERE line_id = '".$_POST["cid"]."' ";
 		$result = mysqli_query($conn,$strSQL);
 		if (mysqli_num_rows($result) > 0){
 
