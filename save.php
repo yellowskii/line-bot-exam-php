@@ -86,16 +86,13 @@
 
 window.onload = function (e) {
     liff.init(function (data) {
-        initializeApp(data);
+			document.getElementById('closebutton').addEventListener('click', function () {
+					liff.closeWindow();
+			});
     });
 };
 
-function initializeApp(data) {
 
-	document.getElementById('closebutton').addEventListener('click', function () {
-			liff.closeWindow();
-	});
-}
 
 
 
