@@ -1,7 +1,7 @@
 <!doctype html>
 
 <?php
-			if (!isset($_POST["cid"])){
+			if (!isset($_POST["uid"])){
 				header("location:test.php");
   			exit(0);
 			}
@@ -43,7 +43,7 @@
 <?php
 		$strSQL = "SELECT *
 								FROM account
-								WHERE line_id = '".$_POST["cid"]."' ";
+								WHERE line_id = '".$_POST["uid"]."' ";
 		$result = mysqli_query($conn,$strSQL);
 		if (mysqli_num_rows($result) > 0){
 
@@ -72,7 +72,7 @@
 
 ?>
 <div class="text-center">
-<button type="button" class="btn btn-danger" id="closebutton">ปิด</button>
+<button type="button" id="closebutton" class="btn btn-danger"  >ปิด</button>
 </div>
 
 	</div>
