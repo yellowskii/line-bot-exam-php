@@ -41,13 +41,28 @@
   <div class="container border border-primary m-auto p-5 p-2" >
 
 <?php
-		$strSQL = "SELECT *
+		$uid_lock_SQL = "SELECT *
 								FROM account
 								WHERE line_id = '".$_POST["uid"]."' ";
-		$result = mysqli_query($conn,$strSQL);
-		if (mysqli_num_rows($result) > 0){
+		$result1 = mysqli_query($conn,$uid_lock_SQL);
+		if (mysqli_num_rows($result1) > 0){
 
-			echo "ผู้ใช้หมายเลขนี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ";
+		$text = "ผู้ใช้หมายเลขโทรศัพท์นี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ มีข้อสงสัยกรุณาติดต่อ XXX-XXXXXXX";
+
+		}
+
+			$cid_lock_SQL = "SELECT *
+									FROM account
+									WHERE cid = '".$_POST["cid"]."' ";
+			$result2 = mysqli_query($conn,$cid_lock_SQL);
+			if (mysqli_num_rows($result2) > 0){
+
+				$text = "หมายเลขประชาชนนี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ มีข้อสงสัยกรุณาติดต่อ XXX-XXXXXXX";
+
+			}
+
+			if(isset($text)){
+				echo $text;
 ?>
 
 <div class="text-center">
