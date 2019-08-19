@@ -16,6 +16,7 @@
 					echo "Connection Error. ".mysqli_connect_error();
 				    else
 					echo "Database Connection Successfully.";
+				mysqli_set_charset($conn, "utf8");
 
 				$strSQL = "SELECT fname, lname, HN, clinic, appoint_date
 						FROM medapp
