@@ -16,7 +16,7 @@
 				    else
 					echo "Database Connection Successfully.";
 
-				$strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.clinic, medapp.appoint_date
+				$strSQL = "SELECT fname, lname, HN, clinic, appoint_date
 						FROM medapp
 						LIMIT 3";
 
