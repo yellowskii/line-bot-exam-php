@@ -16,8 +16,8 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $pushID = 'U3b837ec7315a4f85582a4c35c405a2e8';
 
-$i=0;
-for($i<3){
+
+for($i=0; $i<3; $i++){
 
 if($i==0)
   $text = "แจ้งเตือนนัดการตรวจรักษาของคุณ AA";
@@ -31,5 +31,5 @@ $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
-  $i++;
+
 }
