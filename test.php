@@ -19,19 +19,18 @@
 				$strSQL = "SELECT medapp.HN, medapp.clinic, medapp.doctor, medapp.appoint_date
 						FROM medapp
 						JOIN account
-						ON medapp.HN = account.HN";
+						LIMIT 3;";
 
 				$result = mysqli_query($conn,$strSQL);
 
 				if (mysqli_num_rows($result) > 0) {
 				    // output data of each row
 				    while($row = mysqli_fetch_assoc($result)) {
-
+							echo "HN ".$row["0"]." ไ้ด้มีนัดที่ ".$row["1"]." กับหมอ ".$row["2"]." ในวันที่ ".$row["3"]."<br>";
 				    }
 				} else {
 				    echo "0 results";
 				}
 
-echo $dbtext;
 
 ?>
