@@ -24,7 +24,7 @@
 
 				if (mysqli_num_rows($result) > 0) {
 				    // output data of each row
-				    while($row = mysqli_fetch_assoc($result)) {
+				    while($row = mysqli_fetch_array($result)) {
 							echo "คุณ".$row["0"]." ".$row["1"]."HN ".$row["2"]." ไ้ด้มีนัดที่ ".$row["3"]." ในวันที่ ".$row["4"]."<br>";
 				    }
 				} else {
