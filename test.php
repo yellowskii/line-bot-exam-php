@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <?php
 		echo "WELCOME TO JURASSIC PARK<br><br>";
 
