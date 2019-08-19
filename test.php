@@ -18,7 +18,6 @@
 
 				$strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.clinic, medapp.appoint_date
 						FROM medapp
-						JOIN account
 						LIMIT 3";
 
 				$result = mysqli_query($conn,$strSQL);
