@@ -38,7 +38,10 @@ $channelSecret = '977670d76e802dffac5da90001614136';
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_array($result)) {
-          $text = "คุณ".$row["0"]." ".$row["1"]."HN ".$row["2"]." ไ้ด้มีนัดที่ ".$row["3"]." ในวันที่ ".$row["4"]." เวลา ".$row["5"]." น. <br>NOTE :".$row["6"];
+
+          $time_char = str_replace(".", ":", $row["5"]);
+
+          $text = "คุณ ".$row["0"]." ".$row["1"]." HN ".$row["2"]." ได้มีนัดที่ ".$row["3"]." ในวันที่ ".$row["4"]." เวลา ".$time_char." น. NOTE :".$row["6"];
             array_push($msg_array , $text);
             array_push($usr_array , $row["7"]);
         }
