@@ -18,10 +18,9 @@ $channelSecret = '977670d76e802dffac5da90001614136';
     $conn = mysqli_connect($server,$suser,$spassword,$database);
 
 
-    if(mysqli_connect_error())
+    if(mysqli_connect_error()){
       echo "Connection Error. ".mysqli_connect_error();
-        else
-      echo "Database Connection Successfully.";
+  }
     mysqli_set_charset($conn, "utf8");
 
 
