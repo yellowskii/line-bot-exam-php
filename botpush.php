@@ -8,28 +8,58 @@ $access_token = 'wFJmyBRjsUu7s8WP2ucTr6KhCMjl0h3Wt8UXcbwRM9IG0sRVs6QXWSzUGQ/WX4H
 
 $channelSecret = '977670d76e802dffac5da90001614136';
 
+//Get DB
+    $server = "118.172.127.41";
+    $suser = "botadmin";
+    $spassword = "ktb5570";
+    $database = "ktb-line-bot";
+
+
+    $conn = mysqli_connect($server,$suser,$spassword,$database);
+
+
+    if(mysqli_connect_error())
+      echo "Connection Error. ".mysqli_connect_error();
+        else
+      echo "Database Connection Successfully.";
+    mysqli_set_charset($conn, "utf8");
+
+
+
+    $strSQL = "SELECT account.fname, account.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
+        FROM account
+        JOIN medapp
+        ON account.cid = medapp.cid
+        ";
+
+    $msg_array = array();
+    $usr_array = array();
+    $result = mysqli_query($conn,$strSQL);
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_array($result)) {
+          $text = "คุณ".$row["0"]." ".$row["1"]."HN ".$row["2"]." ไ้ด้มีนัดที่ ".$row["3"]." ในวันที่ ".$row["4"]." เวลา ".$row["5"]." น. <br>NOTE :".$row["6"];
+            array_push($msg_array , $text);
+            array_push($usr_array , $row["7"]);
+        }
+    } else {
+        echo "0 results";
+    }
+
+$num = count($msg_array);
 
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
-$pushID = 'U3b837ec7315a4f85582a4c35c405a2e8';
+for($i=0;$i<$num;$i++){
 
+$pushID = $usr_array[$i];
 
-for($i=0; $i<3; $i++){
-
-if($i==0)
-  $text = "แจ้งเตือนนัดการตรวจรักษาของคุณ AA";
-else if($i==1)
-  $text = "แจ้งเตือนนัดการตรวจรักษาของคุณ BB";
-else
-  $text = "แจ้งเตือนนัดการตรวจรักษาของคุณ CC";
-
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg_array[$i]);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
-
+echo $i." ";
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-
 
 }
