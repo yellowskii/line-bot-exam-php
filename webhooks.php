@@ -16,35 +16,53 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['source']['userId'];
+			$uid = $event['source']['userId'];
 			$getmessage = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text
-			];
-			
-			$messages_regis = [
-				'type' => 'text',
-				'text' => "กรุณาระบุHNและเลขประจำตัวประชานค่ะ"
-			];
-			
-			$messages_check = [
-				'type' => 'text',
-				'text' => "ดำเนินการตรวจสอบการนัด"
-			];
-
-			if($getmessage == "ลงทะเบียนใช้งาน"){
-				$messages = $messages_regis;
-			}
-			
 			if($getmessage == "ตรวจสอบนัดล่าสุด"){
-				$messages = $messages_check;
-			}
-			
+
+				//Get DB
+						$server = "118.172.127.41";
+						$suser = "botadmin";
+						$spassword = "ktb5570";
+						$database = "ktb-line-bot";
+
+						$conn = mysqli_connect($server,$suser,$spassword,$database);
+
+
+						if(mysqli_connect_error()){
+							echo "Connection Error. ".mysqli_connect_error();
+					}
+						mysqli_set_charset($conn, "utf8");
+
+						$strSQL = "SELECT account.fname, account.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
+								FROM account
+								JOIN medapp
+								ON account.line_id = ''".$uid."'
+								";
+
+								$result = mysqli_query($conn,$strSQL);
+								if (mysqli_num_rows($result) > 0) {
+										// output data of each row
+										while($row = mysqli_fetch_array($result)) {
+
+											$time_char = str_replace(".", ":", $row["5"]);
+
+											$text = "คุณ ".$row["0"]." ".$row["1"]." HN ".$row["2"]." ได้มีนัดที่ ".$row["3"]." ในวันที่ ".$row["4"]." เวลา ".$time_char." น. NOTE :".$row["6"];
+
+										}
+								} else {
+										echo "0 results";
+								}
+
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -65,8 +83,8 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 		}
+		}
 	}
 }
 
 echo "OK";
-
