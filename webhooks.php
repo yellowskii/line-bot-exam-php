@@ -40,7 +40,8 @@ if (!is_null($events['events'])) {
 						$strSQL = "SELECT account.fname, account.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
 								FROM account
 								JOIN medapp
-								ON account.line_id = '".$uid."'
+								ON account.cid = medapp.cid
+								WHERE account.line_id = '".$uid."'
 								";
 
 								$result = mysqli_query($conn,$strSQL);
