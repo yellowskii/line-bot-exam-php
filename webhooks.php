@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 								FROM account
 								JOIN medapp
 								ON account.cid = medapp.cid
-								WHERE account.line_id = '".$uid."'
+								WHERE account.line_id = ".$uid."
 								ORDER BY medapp.id DESC 
 								LIMIT 1
 								";
