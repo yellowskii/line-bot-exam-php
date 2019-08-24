@@ -26,7 +26,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
     $date = date("Y-m-d");
 	$date2 = date("Y-m-d", strtotime("+1 day"));
 
-    $strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
+    $strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.oapp_id ,medapp.clinic, medapp.appoint_date, medapp.time_char, meddapp.tel ,medapp.note, account.line_id
         FROM account
         JOIN medapp
         ON account.cid = medapp.cid
@@ -40,11 +40,12 @@ $channelSecret = '977670d76e802dffac5da90001614136';
         // output data of each row
         while($row = mysqli_fetch_array($result)) {
 
-          $time_char = str_replace(".", ":", $row["5"]);
+          $time_char = str_replace(".", ":", $row["6"]);
 
-          $text = "คุณ ".$row["0"]." ".$row["1"]." HN ".$row["2"]." ได้มีนัดที่ ".$row["3"]." ในวันที่ ".$row["4"]." เวลา ".$time_char." น. NOTE :".$row["6"];
+          $text = "คุณ ".$row["0"]." ".$row["1"]." HN ".$row["2"]." หมายเลขใบนัด ".$row["3"]." เบอร์โทร ".$row["7"]." ได้มีนัดที่ ".$row["4"]." ในวันที่ ".$row["5"]." เวลา ".$time_char." น. NOTE : ".$row["8"]." 
+		  *หากพบข้อมูลผิดพลาก หรือหมายเลขที่ใช้ไม่ถูกต้อง กรุณาแจ้งห้องเวชระเบียน ขอบคุณค่ะ*";
             array_push($msg_array , $text);
-            array_push($usr_array , $row["7"]);
+            array_push($usr_array , $row["9"]);
         }
     } else {
         echo "0 results";
