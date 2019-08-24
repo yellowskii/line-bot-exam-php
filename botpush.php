@@ -26,7 +26,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
     $date = date("Y-m-d");
 	$date2 = date("Y-m-d", strtotime("+1 day"));
 
-    $strSQL = "SELECT account.fname, account.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
+    $strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
         FROM account
         JOIN medapp
         ON account.cid = medapp.cid
