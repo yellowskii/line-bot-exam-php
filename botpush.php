@@ -31,7 +31,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
         JOIN medapp
         ON account.cid = medapp.cid
         WHERE medapp.appoint_date BETWEEN ".$date." AND ".$date2."
-        ";.
+        ";
 
     $msg_array = array();
     $usr_array = array();
