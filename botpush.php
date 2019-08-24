@@ -67,8 +67,8 @@ function thaimonth($month_num) {
   }
     mysqli_set_charset($conn, "utf8");
 
-    $date = date("Y-m-d");
-	$date2 = date("Y-m-d", strtotime("+1 day"));
+    $date = date("Y-m-d", strtotime("+1 day"));
+   $date2 = date("Y-m-d", strtotime("+2 day"));
 
     $strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.oapp_id ,medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.tel ,medapp.note, account.line_id
         FROM account
