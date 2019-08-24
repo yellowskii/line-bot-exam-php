@@ -23,13 +23,15 @@ $channelSecret = '977670d76e802dffac5da90001614136';
   }
     mysqli_set_charset($conn, "utf8");
 
-
+    $date = date("Y-m-d");
+	$date2 = date("Y-m-d", strtotime("+1 day"));
 
     $strSQL = "SELECT account.fname, account.lname, medapp.HN, medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.note, account.line_id
         FROM account
         JOIN medapp
         ON account.cid = medapp.cid
-        ";
+        WHERE medapp.appoint_date BETWEEN ".$date." AND ".$date2."
+        ";.
 
     $msg_array = array();
     $usr_array = array();
