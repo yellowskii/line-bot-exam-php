@@ -89,11 +89,11 @@ function thaimonth($month_num) {
 	$td = ltrim($strdate[2],"0");
 	$tm = thaimonth($strdate[1]);
 	$ty = $strdate[0]+543;
-	$year = $td." เดือน ".$tm." พ.ศ. ".$ty;
+	$datetext = $td." เดือน ".$tm." พ.ศ. ".$ty;
 		
           $time_char = str_replace(".", ":", $row["6"]);
 
-          $text = "คุณ ".$row["0"]." ".$row["1"]." HN ".$row["2"]." หมายเลขใบนัด ".$row["3"]." เบอร์โทร ".$row["7"]." ได้มีนัดที่ ".$row["4"]." ในวันที่ ".$year." เวลา ".$time_char." น. NOTE : ".$row["8"]." 
+          $text = "คุณ ".$row["0"]." ".$row["1"]." HN ".$row["2"]." หมายเลขใบนัด ".$row["3"]." เบอร์โทร ".$row["7"]." ได้มีนัดที่ ".$row["4"]." ในวันที่ ".$datetext." เวลา ".$time_char." น. NOTE : ".$row["8"]." 
 		  *หากพบข้อมูลผิดพลาด หรือหมายเลขที่ใช้ไม่ถูกต้อง กรุณาแจ้งห้องเวชระเบียน ขอบคุณค่ะ*";
             array_push($msg_array , $text);
             array_push($usr_array , $row["9"]);
