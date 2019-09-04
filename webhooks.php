@@ -104,17 +104,17 @@ if (!is_null($events['events'])) {
 
 										}
 								} else {
-										echo "0 results";
+										$text = "ไม่มีนัดของคุณในระบบค่ะ"
 								}
 
 				// Build message to reply back
 				$messages = [
-					{	'type' => 'text',
+						'type' => 'text',
 						'text' => $text
-					},
-					{	'type' => 'text',
+				],
+				[
+						'type' => 'text',
 						'text' => $text
-					}
 				];
 
 			// Make a POST Request to Messaging API to reply to sender
