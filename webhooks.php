@@ -79,12 +79,13 @@ if (!is_null($events['events'])) {
 							echo "Connection Error. ".mysqli_connect_error();
 					}
 						mysqli_set_charset($conn, "utf8");
-
+							
+						$date = date("Y-m-d");
 						 $strSQL = "SELECT medapp.fname, medapp.lname, medapp.HN, medapp.oapp_id ,medapp.clinic, medapp.appoint_date, medapp.time_char, medapp.tel ,medapp.note, account.line_id
 								FROM account
 								JOIN medapp
 								ON account.cid = medapp.cid
-								WHERE account.line_id = '".$uid."'
+								WHERE account.line_id = '".$uid."' AND medapp.appoint_date >= '".$date."'
 								ORDER BY medapp.id DESC 
 								LIMIT 1
 								";
@@ -104,7 +105,7 @@ if (!is_null($events['events'])) {
 
 										}
 								} else {
-										$text = "ไม่มีนัดของคุณในระบบค่ะ"
+										$text = "ไม่มีนัดของคุณในระบบค่ะ";
 								}
 
 				// Build message to reply back
