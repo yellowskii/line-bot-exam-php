@@ -43,8 +43,12 @@
 				 <div class="text-center">
 				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
 
-
 				 </div>
+				
+				<div class="text-center">
+					<button type="button" id="closebutton" class="btn btn-danger"  >ปิด</button>
+				</div>
+		
 
 			</form>
 	</div>
@@ -60,6 +64,11 @@
 window.onload = function (e) {
     liff.init(function (data) {
         initializeApp(data);
+	    
+	   document.getElementById('closebutton').addEventListener('click', function () {
+					liff.closeWindow();
+	});
+	    
     });
 };
 
