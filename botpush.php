@@ -53,7 +53,7 @@ function thaimonth($month_num) {
 	}
 
 //Get DB
-    $server = "118.172.127.41";
+    $server = "voipktbh.dyndns.org";
     $suser = "botadmin";
     $spassword = "ktb5570";
     $database = "ktb-line-bot";
