@@ -67,7 +67,7 @@ if (!is_null($events['events'])) {
 			if($getmessage == "ตรวจสอบนัดล่าสุด"){
 
 				//Get DB
-						$server = "118.172.127.41";
+						$server = "voipktbh.dyndns.org";
 						$suser = "botadmin";
 						$spassword = "ktb5570";
 						$database = "ktb-line-bot";
