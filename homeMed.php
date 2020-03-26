@@ -14,6 +14,10 @@
   <div class="container border border-primary m-auto p-5 p-2" >
     <h1 class="text-center" >ระบบลงทะเบียนKTB HomeMed</h1>
 	<form  id="myForm" action="Med_save.php" method="post" >
+    <div class="form-group">
+      <label for="uid">LINE ID</label>
+      <input type="text" class="form-control" name="uid" id="uid" required>
+    </div>
           <input type="hidden" class="form-control" name="uid" id="uid" required>
         <div class="form-group">
           <?php
@@ -29,7 +33,7 @@
         </div>
         <div class="form-group">
 					<label for="date">วันที่นัด</label>
-					<input type="date" class="form-control" name="date" id="date" <?php echo "min='".date('Y-m-d', $date)."'"?> required>
+					<input type="date" class="form-control" name="date" id="date" <?php echo "min='".date('Y-m-d', $date)."'"?>required>
 			  </div>
 				 <div class="text-center">
 				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
