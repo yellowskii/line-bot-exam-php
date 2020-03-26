@@ -17,7 +17,7 @@
           <input type="hidden" class="form-control" name="uid" id="uid" required>
         <div class="form-group">
           <label for="tel">เบอร์โทร</label>
-          <input type="text" class="form-control" name="tel" id="tel" pattern= “^[0–9]$” required>
+          <input type="text" class="form-control" name="tel" id="tel" pattern= "[0-9]" required>
         </div>
         <div class="form-group">
           <label for="cln">คลินิก</label>
