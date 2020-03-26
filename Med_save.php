@@ -38,27 +38,17 @@
   <body>
 
   <div class="container border border-primary m-auto p-5 p-2" >
-
-<?php
-
-?>
-
-<div class="text-center">
- <button type="submit" class="btn btn-primary" name="back" onclick="history.go(-1);" >กลับ</button><br><br>
-</div>
-
+  <h1 class="text-center" >ระบบลงทะเบียนKTB HomeMed</h1>
 	<?php
-
-
 				$strSQL = "INSERT INTO homemed (tel, clinic, med_date, line_id)
 									VALUES ('".$_POST["tel"]."', '".$_POST["cln"]."','".$_POST["date"]."', '".$_POST["uid"]."')";
 
 				if(mysqli_query($conn,$strSQL)){
 
 						echo "<h4>ลงทะเบียนเรียบร้อยแล้ว</h4>";
-						echo "<h4>ขอให้เมื่อถึงวันนัด ให้ผู้ป่วยหรือตัวแทนนำบัตรมายื่นที่ <a class='font-weight-bold text-danger'>จุดรับยา2<a> ที่ร้านเวลากาแฟหน้าห้องฉุกเฉิน เวลา9.00-11.00น.
-						<a class='font-weight-bold'>ตรงวันนัดเท่านั้น<a>เพื่อรับยาและใบนัดใหม่ <a class='font-weight-bold'>โดยไม่ต้องทำบัตรเวชระเบียน ไม่ต้องเจาะเลือด ไมต้องรอพบแพทย์พยาบาล<a></h4>
-						<h4>ขอสงวนสิทธิบางกรณีจะมีการติดต่อทาง lineหรือเบอร์โทรที่ให้ไว้เพื่อแจ้งเปลี่ยนแปลงรายละเอียดการรับยาเดิม</h4>
+						echo "ขอให้เมื่อถึงวันนัด ให้ผู้ป่วยหรือตัวแทนนำบัตรมายื่นที่ <a class='font-weight-bold text-danger'>จุดรับยา2<a> ที่ร้านเวลากาแฟหน้าห้องฉุกเฉิน เวลา9.00-11.00น.
+						<a class='font-weight-bold'>ตรงวันนัดเท่านั้น<a>เพื่อรับยาและใบนัดใหม่ <a class='font-weight-bold'>โดยไม่ต้องทำบัตรเวชระเบียน ไม่ต้องเจาะเลือด ไมต้องรอพบแพทย์พยาบาล<a>
+						ขอสงวนสิทธิบางกรณีจะมีการติดต่อทาง lineหรือเบอร์โทรที่ให้ไว้เพื่อแจ้งเปลี่ยนแปลงรายละเอียดการรับยาเดิม
 						";
 
 				} else {
