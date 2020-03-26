@@ -25,11 +25,11 @@
         </div>
         <div class="form-group">
           <label for="cln">คลินิก</label>
-          <input type="text" class="form-control" name="cln" <?php echo "min='".date('Y-m-d', $date)."'"?> id="cln" required>
+          <input type="text" class="form-control" name="cln" id="cln" required>
         </div>
         <div class="form-group">
 					<label for="date">วันที่นัด</label>
-					<input type="date" class="form-control" name="date" id="date" maxlength = "13" required>
+					<input type="date" class="form-control" name="date" id="date" <?php echo "min='".date('Y-m-d', $date)."'"?> required>
 			  </div>
 				 <div class="text-center">
 				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
