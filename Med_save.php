@@ -1,0 +1,99 @@
+<!doctype html>
+
+<?php
+			if (!isset($_POST["uid"])){
+				header("location:test.php");
+  			exit(0);
+			}
+
+		//Get DB
+				$server = "voipktbh.dyndns.org";
+				$suser = "botadmin";
+				$spassword = "ktb5570";
+				$database = "ktb-line-bot";
+
+
+				$conn = mysqli_connect($server,$suser,$spassword,$database);
+
+				if(mysqli_connect_error()){
+					echo "Connection Error. ".mysqli_connect_error();
+				 }
+				mysqli_set_charset($conn, "utf8");
+?>
+
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>ระบบลงทะเบียนKTB HomeMed</title>
+  </head>
+  <body>
+
+  <div class="container border border-primary m-auto p-5 p-2" >
+
+<?php
+
+?>
+
+<div class="text-center">
+ <button type="submit" class="btn btn-primary" name="back" onclick="history.go(-1);" >กลับ</button><br><br>
+</div>
+
+	<?php
+		} else{
+
+				$strSQL = "INSERT INTO account (tel, clinic, med_date, line_id)
+									VALUES ('".$_POST["tel"]."', '".$_POST["cln"]."','".$_POST["date"]."', '".$_POST["uid"]."')";
+
+				if(mysqli_query($conn,$strSQL)){
+
+						echo "<h4>ลงทะเบียนเรียบร้อยแล้ว</h4>";
+						echo "<h4>ขอให้เมื่อถึงวันนัด ให้ผู้ป่วยหรือตัวแทนนำบัตรมายื่นที่ <a class='font-weight-bold text-danger'>จุดรับยา2<a> ที่ร้านเวลากาแฟหน้าห้องฉุกเฉิน เวลา9.00-11.00น.
+						<a class='font-weight-bold'>ตรงวันนัดเท่านั้น<a>เพื่อรับยาและใบนัดใหม่ <a class='font-weight-bold'>โดยไม่ต้องทำบัตรเวชระเบียน ไม่ต้องเจาะเลือด ไมต้องรอพบแพทย์พยาบาล<a></h4>
+						<h4>ขอสงวนสิทธิบางกรณีจะมีการติดต่อทาง lineหรือเบอร์โทรที่ให้ไว้เพื่อแจ้งเปลี่ยนแปลงรายละเอียดการรับยาเดิม</h4>
+						";
+
+				} else {
+				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+				}
+
+		}
+
+?>
+<div class="text-center">
+<button type="button" id="closebutton" class="btn btn-danger"  >ปิด</button>
+</div>
+
+	</div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/popper.js"></script>
+<script>
+
+window.onload = function (e) {
+    liff.init(function (data) {
+			document.getElementById('closebutton').addEventListener('click', function () {
+					liff.closeWindow();
+			});
+    });
+};
+
+
+
+
+
+</script>
+  </body>
+</html>
