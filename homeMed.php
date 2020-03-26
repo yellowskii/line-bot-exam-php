@@ -17,7 +17,7 @@
           <input type="hidden" class="form-control" name="uid" id="uid" required>
         <div class="form-group">
           <label for="tel">เบอร์โทร</label>
-          <input type="text" class="form-control" name="tel" id="tel" pattern= "[0-9]" required>
+          <input type="text" class="form-control" name="tel" id="tel" pattern="[0-9]{10}" required>
         </div>
         <div class="form-group">
           <label for="cln">คลินิก</label>
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
 					<label for="date">วันที่นัด</label>
-					<input type="date" class="form-control" name="date" id="date" maxlength = "13" required>
+					<input type="date" class="form-control" name="date" id="date" required>
 			  </div>
 				 <div class="text-center">
 				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
