@@ -13,19 +13,23 @@
   <body>
   <div class="container border border-primary m-auto p-5 p-2" >
     <h1 class="text-center" >ระบบลงทะเบียนKTB HomeMed</h1>
-	<form  id="myForm" action="save.php" method="post" >
+	<form  id="myForm" action="Med_save.php" method="post" >
           <input type="hidden" class="form-control" name="uid" id="uid" required>
         <div class="form-group">
+          <?php
+          $date = strtotime("+7 day");
+           ?>
+
           <label for="tel">เบอร์โทร</label>
-          <input type="text" class="form-control" name="tel" id="tel" pattern="[0-9]{10}" required>
+          <input type="number" class="form-control" name="tel" id="tel"  required>
         </div>
         <div class="form-group">
           <label for="cln">คลินิก</label>
-          <input type="text" class="form-control" name="cln" id="cln" required>
+          <input type="text" class="form-control" name="cln" <?php echo "min='".date('Y-m-d', $date)."'"?> id="cln" required>
         </div>
         <div class="form-group">
 					<label for="date">วันที่นัด</label>
-					<input type="date" class="form-control" name="date" id="date" required>
+					<input type="date" class="form-control" name="date" id="date" maxlength = "13" required>
 			  </div>
 				 <div class="text-center">
 				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
