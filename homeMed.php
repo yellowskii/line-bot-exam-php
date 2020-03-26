@@ -21,7 +21,7 @@
            ?>
 
           <label for="tel">เบอร์โทร</label>
-          <input type="number" class="form-control" name="tel" id="tel"  required>
+          <input type="text" class="form-control" name="tel" id="tel" pattern="[0-9]+" required>
         </div>
         <div class="form-group">
           <label for="cln">คลินิก</label>
@@ -36,7 +36,7 @@
 				 </div>
 
 				<div class="text-center">
-					<button type="button" id="closebutton" class="btn btn-danger"  >ปิด</button>
+					<button type="button" id="closebutton" class="btn btn-danger">ปิด</button>
 				</div>
 
 			</form>
