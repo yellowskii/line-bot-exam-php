@@ -50,7 +50,7 @@
 	<?php
 		} else{
 
-				$strSQL = "INSERT INTO account (tel, clinic, med_date, line_id)
+				$strSQL = "INSERT INTO homemed (tel, clinic, med_date, line_id)
 									VALUES ('".$_POST["tel"]."', '".$_POST["cln"]."','".$_POST["date"]."', '".$_POST["uid"]."')";
 
 				if(mysqli_query($conn,$strSQL)){
