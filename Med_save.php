@@ -48,7 +48,7 @@
 </div>
 
 	<?php
-		} else{
+
 
 				$strSQL = "INSERT INTO homemed (tel, clinic, med_date, line_id)
 									VALUES ('".$_POST["tel"]."', '".$_POST["cln"]."','".$_POST["date"]."', '".$_POST["uid"]."')";
@@ -65,7 +65,7 @@
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 				}
 
-		}
+
 
 ?>
 <div class="text-center">
