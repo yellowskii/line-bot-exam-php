@@ -19,6 +19,7 @@
 					echo "Connection Error. ".mysqli_connect_error();
 				 }
 				mysqli_set_charset($conn, "utf8");
+
 ?>
 
 
@@ -38,6 +39,16 @@
   <body>
 
   <div class="container border border-primary m-auto p-5 p-2" >
+
+<?php
+
+		$uid_lock_SQL = "SELECT *
+								FROM account
+								WHERE line_id = '".$_POST["uid"]."' ";
+		$result1 = mysqli_query($conn,$uid_lock_SQL);
+		if (mysqli_num_rows($result1) > 0){
+
+?>
   <h1 class="text-center" >ระบบลงทะเบียนKTB HomeMed</h1>
 	<?php
 				$strSQL = "INSERT INTO homemed (tel, clinic, med_date, line_id)
@@ -46,7 +57,7 @@
 				if(mysqli_query($conn,$strSQL)){
 
 						echo "<h4>ลงทะเบียนเรียบร้อยแล้ว</h4>";
-						echo "ขอให้เมื่อถึงวันนัด ให้ผู้ป่วยหรือตัวแทนนำบัตรมายื่นที่ <a class='font-weight-bold text-danger'>จุดรับยา2<a> ที่ร้านเวลากาแฟหน้าห้องฉุกเฉิน เวลา9.00-11.00น.
+						echo "ขอให้เมื่อถึงวันนัด ให้ผู้ป่วยหรือตัวแทนนำบัตรประชาชนมายื่นที่ <a class='font-weight-bold text-danger'>จุดรับยา2<a> ที่ร้านเวลากาแฟหน้าห้องฉุกเฉิน เวลา9.00-11.00น.
 						<a class='font-weight-bold'>ตรงวันนัดเท่านั้น<a>เพื่อรับยาและใบนัดใหม่ <a class='font-weight-bold'>โดยไม่ต้องทำบัตรเวชระเบียน ไม่ต้องเจาะเลือด ไมต้องรอพบแพทย์พยาบาล<a>
 						<br><br>ขอสงวนสิทธิบางกรณีจะมีการติดต่อทาง lineหรือเบอร์โทรที่ให้ไว้เพื่อแจ้งเปลี่ยนแปลงรายละเอียดการรับยาเดิม<br><br>
 						";
@@ -55,6 +66,11 @@
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 				}
 
+			}else{
+				$text = "<h1>กรุณาลงทะเบียนผู้ใช้กับโรงพยาบาลด้วยเมนูในLINEก่อน ขอบคุณค่ะ</h1><br><br>";
+				echo $text;
+
+			}
 
 
 ?>
