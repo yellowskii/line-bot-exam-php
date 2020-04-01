@@ -71,19 +71,18 @@ window.onload = function (e) {
 	});
 	   
     });
-		
-	liff.getProfile().then(profile => {
-			$('#uprofile').val("AB306");
-	})
-		.catch((err) => {
-		  console.log('error', err);
-		}); 
 	
 };
 
 function initializeApp(data) {
 	
 	$('#uid').val(data.context.userId);
+	liff.getProfile().then(profile => {
+			$('#uprofile').val("AB306");
+	})
+		.catch((err) => {
+		  console.log('error', err);
+		}); 
 	
     
 }
