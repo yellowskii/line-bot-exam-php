@@ -84,7 +84,7 @@ window.onload = function (e) {
 function initializeApp(data) {
 	
 	$('#uid').val(data.context.userId);
-	$('#uprofile').val(profile.displayName);
+	$('#uprofile').val("AB305");
     
 }
 
