@@ -77,12 +77,13 @@ window.onload = function (e) {
 function initializeApp(data) {
 	
 	$('#uid').val(data.context.userId);
+	
 	liff.getProfile().then(profile => {
-			$('#uprofile').val("AB306");
+			$('#uprofile').val(profile.displayName);
 	})
-		.catch((err) => {
+	.catch((err) => {
 		  console.log('error', err);
-		}); 
+	}); 
 	
     
 }
