@@ -74,7 +74,7 @@ window.onload = function (e) {
 		
 	liff.getProfile().then(profile => {
 			$('#uprofile').val(profile.displayName);
-			console.log(profile.displayName);
+			console.log("success");
 	})
 		.catch((err) => {
 		  console.log('error', err);
