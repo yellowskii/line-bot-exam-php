@@ -73,8 +73,8 @@
 	<?php
 		} else{
 
-				$strSQL = "INSERT INTO account (fname, lname, cid, line_id)
-									VALUES ('".$_POST["fname"]."', '".$_POST["lname"]."','".$_POST["cid"]."', '".$_POST["uid"]."')";
+				$strSQL = "INSERT INTO account (fname, lname, cid, profile,line_id)
+									VALUES ('".$_POST["fname"]."', '".$_POST["lname"]."','".$_POST["cid"]."', '".$_POST["uprofile"]."',  '".$_POST["uid"]."')";
 
 				if(mysqli_query($conn,$strSQL)){
 
