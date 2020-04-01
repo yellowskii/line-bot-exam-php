@@ -69,16 +69,16 @@ window.onload = function (e) {
 	   document.getElementById('closebutton').addEventListener('click', function () {
 					liff.closeWindow();
 	});
-	    
-    });
-		
-	liff.getProfile().then(profile => {
+	   liff.getProfile().then(profile => {
 			$('#uprofile').val(profile.displayName);
 			console.log("success");
 	})
 		.catch((err) => {
 		  console.log('error', err);
-		});
+		}); 
+    });
+		
+	
 	
 };
 
