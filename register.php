@@ -22,7 +22,7 @@
 
 
           <input type="text" class="form-control" name="uid" id="uid" required>
-	 <input type="text" class="form-control" name="uid" id="uprofile" required>
+	 <input type="text" class="form-control" name="uprofile" id="uprofile" required>
 
 
         <div class="form-group">
