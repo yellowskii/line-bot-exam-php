@@ -21,8 +21,8 @@
 	<form  id="myForm" action="save.php" method="post" >
 
 
-          <input type="text" class="form-control" name="uid" id="uid" required>
-	 <input type="text" class="form-control" name="uprofile" id="uprofile" required>
+          <input type="hidden" class="form-control" name="uid" id="uid" required>
+	 <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
 
 
         <div class="form-group">
