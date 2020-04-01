@@ -73,7 +73,7 @@ window.onload = function (e) {
     });
 		
 	liff.getProfile().then(profile => {
-		  document.getElementById('uprofile').value = profile.displayName;
+			$('#uprofile').val(profile.displayName);
 		})
 		.catch((err) => {
 		  console.log('error', err);
@@ -82,8 +82,9 @@ window.onload = function (e) {
 };
 
 function initializeApp(data) {
-
-    document.getElementById('uid').value = data.context.userId;
+	
+	$('#uid').val(data.context.userId);
+	$('#uprofile').val(profile.displayName);
     
 }
 
