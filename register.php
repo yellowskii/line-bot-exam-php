@@ -21,7 +21,8 @@
 	<form  id="myForm" action="save.php" method="post" >
 
 
-          <input type="hidden" class="form-control" name="uid" id="uid" required>
+          <input type="text" class="form-control" name="uid" id="uid" required>
+	 <input type="text" class="form-control" name="uid" id="uprofile" required>
 
 
         <div class="form-group">
@@ -70,14 +71,21 @@ window.onload = function (e) {
 	});
 	    
     });
+		
+	liff.getProfile().then(profile => {
+		  const name = profile.displayName
+		})
+		.catch((err) => {
+		  console.log('error', err);
+		});
+	
 };
 
 function initializeApp(data) {
 
     document.getElementById('uid').value = data.context.userId;
+    document.getElementById('uprofile').value = name;
 }
-
-
 
 </script>
 
