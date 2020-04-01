@@ -73,8 +73,7 @@ window.onload = function (e) {
     });
 		
 	liff.getProfile().then(profile => {
-		  const name = profile.displayName
-		  document.getElementById('uprofile').value = name;
+		  document.getElementById('uprofile').value = profile.displayName;
 		})
 		.catch((err) => {
 		  console.log('error', err);
