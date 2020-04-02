@@ -86,7 +86,7 @@ if (!is_null($events['events'])) {
 								JOIN medapp
 								ON account.cid = medapp.cid
 								WHERE account.line_id = '".$uid."' AND medapp.appoint_date >= '".$date."'
-								ORDER BY medapp.id DESC 
+								ORDER BY medapp.appoint_date ASC 
 								LIMIT 1
 								";
 
