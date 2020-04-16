@@ -76,7 +76,7 @@
 				$profile_name = preg_replace("/[^a-zA-Z0-9]+/", "", html_entity_decode($_POST["uprofile"], ENT_QUOTES));
 
 				$strSQL = "INSERT INTO account (fname, lname, cid, profile,line_id)
-									VALUES ('".$name."', '".$lname."','".$_POST["cid"]."', '".$profile_name."',  '".$_POST["uid"]."')";
+									VALUES ('".$_POST["name"]."', '".$_POST["lname"]."','".$_POST["cid"]."', '".$profile_name."',  '".$_POST["uid"]."')";
 
 				if(mysqli_query($conn,$strSQL)){
 
