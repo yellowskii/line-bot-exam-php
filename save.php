@@ -73,7 +73,7 @@
 	<?php
 		} else{		
 				
-				$profile_name = preg_replace("/[^a-zA-Z0-9]+/", "", html_entity_decode($_POST["uprofile"], ENT_QUOTES));
+				$profile_name = str_replace('"', '``', str_replace("'", "`", $_POST["uprofile"],));
 
 				$strSQL = "INSERT INTO account (fname, lname, cid, profile,line_id)
 									VALUES ('".$_POST["fname"]."', '".$_POST["lname"]."','".$_POST["cid"]."', '".$profile_name."',  '".$_POST["uid"]."')";
