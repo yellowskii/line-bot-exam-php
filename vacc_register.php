@@ -24,7 +24,6 @@
 
           <form action="save.php" method="post">
 
-/*
   <input type="text" class="form-control" name="uid" id="uid" required>
   <input type="text" class="form-control" name="uprofile" id="uprofile" required>
 
@@ -175,47 +174,18 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="bootstrap-select-1.13.9/dist/js/bootstrap-select.js"></script>
 <script>
-	$(document).ready(function() {
 
-	});
+  window.onload = function (e) {
+      liff.init(function (data) {
+          initializeApp(data);
 
-		function textToDate(dateValue){
+  	   document.getElementById('closebutton').addEventListener('click', function () {
+  					liff.closeWindow();
+  	});
 
-						var datetext = dateValue.split(" ");
-						datetext = datetext.filter(String);
-						var monthtext = datetext[1];
+      });
 
-						var month;
-						if(monthtext == "ม.ค.")
-							month = "01";
-						else if(monthtext == "ก.พ.")
-							month = "02";
-						else if(monthtext == "มี.ค.")
-							month = "03";
-						else if(monthtext == "เม.ย.")
-							month = "04";
-						else if(monthtext == "พ.ค.")
-							month = "05";
-						else if(monthtext == "มิ.ย.")
-							month = "06";
-						else if(monthtext == "ก.ค.")
-							month = "07";
-						else if(monthtext == "ส.ค.")
-							month = "08";
-						else if(monthtext == "ก.ย.")
-							month = "09";
-						else if(monthtext == "ต.ค.")
-							month = "10";
-						else if(monthtext == "พ.ย.")
-							month = "11";
-						else if(monthtext == "ธ.ค.")
-							month = "12";
-
-						var date = datetext[2] + "-" + month + "-" +  datetext[0];
-
-						return date;
-
-		}
+  };
 
     function initializeApp(data) {
 
