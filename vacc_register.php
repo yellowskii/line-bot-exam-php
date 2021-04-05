@@ -20,9 +20,9 @@
 
   <div class="container border border-primary m-auto p-5 p-2" >
 
-    <h1 class="text-center" >ลงทะเบียนวัคซีน</h1>
+    <h1 class="text-center">ลงทะเบียนวัคซีน</h1>
 
-          <form action="save.php" method="post">
+          <form action="vacc_save.php" method="post">
 
   <input type="hidden" class="form-control" name="uid" id="uid" required>
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
@@ -159,7 +159,7 @@
  				 </div>
 
  				<div class="text-center">
- 					<button type="button" id="closebutton" class="btn btn-danger"  >ปิด</button>
+ 					<button type="button" id="closebutton" class="btn btn-danger">ปิด</button>
  				</div>
 
 	</div>
