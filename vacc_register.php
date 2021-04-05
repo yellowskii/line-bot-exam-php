@@ -24,8 +24,8 @@
 
           <form action="save.php" method="post">
 
-  <input type="text" class="form-control" name="uid" id="uid" required>
-  <input type="text" class="form-control" name="uprofile" id="uprofile" required>
+  <input type="hidden" class="form-control" name="uid" id="uid" required>
+  <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
 
 <div class="input-group">
 <label  class="col-2" for="name">ชื่อ </label>
@@ -38,6 +38,18 @@
 <label  class="col-2" for="surname">นามสกุล </label>
 <div class="col">
  <input type="text" class="form-control mb-2" name="surname" id="surname" required>
+</div>
+</div>
+
+<div class="input-group">
+<label  class="col-2" for="prename">คำนำหน้า</label>
+<div class="col">
+  <input type="radio" id="male" name="prename" value="นาย">
+  <label for="male">นาย</label><br>
+  <input type="radio" id="female" name="prename" value="นาง">
+  <label for="female">นาง</label><br>
+  <input type="radio" id="other" name="prename" value="นางสาว">
+  <label for="other">นางสาว</label><br>
 </div>
 </div>
 
@@ -62,8 +74,6 @@
   <label for="male">ชาย</label><br>
   <input type="radio" id="female" name="gender" value="หญิง">
   <label for="female">หญิง</label><br>
-  <input type="radio" id="other" name="gender" value="ไม่ระบุ">
-  <label for="other">ไม่ระบุ</label><br>
 </div>
 </div>
 
@@ -92,19 +102,6 @@
  <input type="number" class="form-control mb-2" name="moo" id="moo">
 </div>
 </div>
-
-<div class="input-group">
-<label  class="col-2" for="prename">คำนำหน้า</label>
-<div class="col">
-  <input type="radio" id="male" name="prename" value="นาย">
-  <label for="male">นาย</label><br>
-  <input type="radio" id="female" name="prename" value="นาง">
-  <label for="female">นาง</label><br>
-  <input type="radio" id="other" name="prename" value="นางสาว">
-  <label for="other">นางสาว</label><br>
-</div>
-</div>
-
 
 <div class="input-group">
 <label  class="col-2" for="bday">วันเกิด</label>
@@ -146,8 +143,9 @@
         $datemonth = "พ.ค.";
         break;
 }
+      $count = 0;
 
-      $datetext = $datesplit[0]." ".$datemonth." ".$time;
+      $datetext = $datesplit[0]." ".$datemonth." ".$time." ".$count;
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
     }
      ?>
