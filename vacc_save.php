@@ -3,7 +3,7 @@
 <?php
 
 		//Get DB
-				$server = "118.172.127.41";
+				$server = "voipktbh.dyndns.org";
 				$suser = "botadmin";
 				$spassword = "ktb5570";
 				$database = "ktb-line-bot";
@@ -14,6 +14,7 @@
 				if(mysqli_connect_error()){
 					echo "Connection Error. ".mysqli_connect_error();
 				 }
+				 mysqli_set_charset($conn, "utf8");
 ?>
 
 
@@ -28,7 +29,32 @@
 
     <!-- Bootstrap CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
-	<link
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	    <title>ระบบลงทะเบียนวัคซีน</title>
+	  </head>
+	  <body>
+
+			<div class="container border border-primary m-auto p-5 p-2" >
+<?php
+
+$cid_lock_SQL = "SELECT *
+									FROM account
+									WHERE cid = '".$_POST["cid"]."' ";
+			$result2 = mysqli_query($conn,$cid_lock_SQL);
+			if (mysqli_num_rows($result2) > 0){
+
+				$text = "หมายเลขประชาชนนี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ มีข้อสงสัยกรุณาติดต่อ XXX-XXXXXXX";
+
+			}
+
+			if(isset($text)){
+				echo $text;
+
+ ?>
+
+
+<div class="text-center">
  <button type="submit" class="btn btn-primary" name="back" onclick="history.go(-1);" >กลับ</button><br><br>
 </div>
 
