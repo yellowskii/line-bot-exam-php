@@ -124,7 +124,7 @@
 <div class="input-group">
 <label  class="col-2" for="bday">วันเกิด</label>
 <div class="col">
- <input type="date" class="form-control mb-2" name="bday" id="bday">
+ <input type="date" class="form-control mb-2" name="bday" id="bday" min="1941-04-01" max="2003-04-01">
 </div>
 </div>
 
@@ -208,14 +208,11 @@
 
       });
 
+
+
   };
 
-  $( "#bday" ).datepicker({
-    dateFormat: 'dd.mm.yy',
-    changeMonth: true,
-    changeYear: true,
-    yearRange: '-59:-18'
-});
+
 
     function initializeApp(data) {
 
