@@ -74,7 +74,7 @@
 <div class="input-group">
 <label  class="col-2" for="cid">เลขบัตรประชาชน</label>
 <div class="col">
- <input type="number" class="form-control mb-2" name="cid" id="cid" maxlength="13" required>
+ <input type="text" class="form-control mb-2" name="cid" id="cid" pattern="[0-9]{13}" required>
 </div>
 </div>
 
@@ -142,7 +142,7 @@
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30","2021-05-03","2021-05-05","2021-05-06","2021-05-07");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
-    $limit = 1;
+    $limit = 300;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
@@ -181,7 +181,7 @@
         $datemonth = "พ.ค.";
         break;
       }
-      $datetext = $datesplit[0]." ".$datemonth." ".$time." ".$count[$i]." คน";
+      $datetext = $datesplit[2]." ".$datemonth." ".$time." ".$count[$i]." คน";
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
       }
     }
