@@ -149,9 +149,9 @@
     $result = mysqli_query($conn,$SQL);
     if (mysqli_num_rows($result) > 0) {
       while($row = mysqli_fetch_array($result)) {
-          for($i=0;$i<count($dateval);$i++){
-            if($dateval[$i] = $row[0]){
-              $count[$i] = $row[1];
+          for($j=0;$j<count($dateval);$j++){
+            if($dateval[$j] == $row[0]){
+              $count[$j] = $row[1];
             }
           }
       }
