@@ -138,10 +138,11 @@
 
 
 
-    $dateval = array("2021-04-19","2021-04-20","21-04-2021","22-04-2021","23-04-2021","26-04-2021",
-                  "27-04-2021","28-04-2021","29-04-2021","30-04-2021","03-05-2021","05-05-2021","06-05-2021","07-05-2021");
+    $dateval = array("2021-04-19","2021-04-20","2021-04-21","2021-04-22","2021-04-23","2021-04-26",
+                  "2021-04-27","2021-04-28","2021-04-29","2021-04-30","2021-05-03","2021-05-05","2021-05-06","2021-05-07");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
+    $limit = 1;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
@@ -159,6 +160,8 @@
 
     for($i=0;$i<count($dateval);$i++)
     {
+        if($count[$i] < $limit){
+
      $datesplit = explode("-",$dateval[$i]);
 
     switch ($datesplit[1]) {
@@ -177,11 +180,10 @@
     case "05":
         $datemonth = "พ.ค.";
         break;
-}
-
-
+      }
       $datetext = $datesplit[0]." ".$datemonth." ".$time." ".$count[$i]." คน";
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
+      }
     }
      ?>
   </select>
