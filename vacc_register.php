@@ -1,4 +1,22 @@
 <!doctype html>
+
+<?php
+
+		//Get DB
+				$server = "voipktbh.dyndns.org";
+				$suser = "botadmin";
+				$spassword = "ktb5570";
+				$database = "ktb-line-bot";
+
+
+				$conn = mysqli_connect($server,$suser,$spassword,$database);
+
+				if(mysqli_connect_error()){
+					echo "Connection Error. ".mysqli_connect_error();
+				 }
+				 mysqli_set_charset($conn, "utf8");
+?>
+
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -143,7 +161,12 @@
         $datemonth = "พ.ค.";
         break;
 }
-      $count = 0;
+
+      $SQL = "SELECT count(id)
+                  FROM vaccine_app
+                  WHERE appoint_date = '".$dateval[$i]."' ";
+      $result = mysqli_query($conn,$SQL);
+      $count = $result;
 
       $datetext = $datesplit[0]." ".$datemonth." ".$time." ".$count;
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
