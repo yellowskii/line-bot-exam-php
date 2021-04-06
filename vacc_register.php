@@ -152,15 +152,17 @@
   </select>
 </div>
 </div>
-		</form>
+
+<div class="text-center">
+      <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
+     </div>
 
     <div class="text-center">
- 				  <button type="submit" class="btn btn-primary" name="submit">ตกลง</button><br><br>
- 				 </div>
+      <button type="button" id="closebutton" class="btn btn-danger">ปิด</button>
+    </div>
+		</form>
 
- 				<div class="text-center">
- 					<button type="button" id="closebutton" class="btn btn-danger">ปิด</button>
- 				</div>
+
 
 	</div>
 
