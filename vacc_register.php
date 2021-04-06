@@ -136,9 +136,21 @@
     <option selected>กรุณาเลือก</option>
     <?php
 
+
+
     $dateval = array("2021-04-19","2021-04-20","21-04-2021","22-04-2021","23-04-2021","26-04-2021",
                   "27-04-2021","28-04-2021","29-04-2021","30-04-2021","03-05-2021","05-05-2021","06-05-2021","07-05-2021");
     $time = "12:30 น.";
+
+    $SQL = "SELECT appoint_date , count(id) AS counter
+                FROM vaccine_app
+                GROUP BY appoint_date";
+    $result = mysqli_query($conn,$SQL);
+    if (mysqli_num_rows($result) > 0) {
+      while($row = mysqli_fetch_array($result)) {
+          $count = $row[1];
+      }
+   }
 
     for($i=0;$i<count($dateval);$i++)
     {
@@ -162,13 +174,8 @@
         break;
 }
 
-      $SQL = "SELECT count(appointe_Date)
-                  FROM vaccine_app
-                  WHERE appoint_date > '".$dateval[$i]."' AND  appoint_date < '".$dateval[$i]."'";
-      $result = mysqli_query($conn,$SQL);
-      $count = $result;
 
-      $datetext = $datesplit[0]." ".$datemonth." ".$time." ".$count;
+      $datetext = $datesplit[0]." ".$datemonth." ".$time." ".$count." คน";
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
     }
      ?>
