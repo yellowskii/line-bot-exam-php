@@ -140,6 +140,7 @@
 
     $dateval = array("2021-04-19","2021-04-20","21-04-2021","22-04-2021","23-04-2021","26-04-2021",
                   "27-04-2021","28-04-2021","29-04-2021","30-04-2021","03-05-2021","05-05-2021","06-05-2021","07-05-2021");
+    $count = array_fill(0, count($dateval), '0');             
     $time = "12:30 น.";
 
     $SQL = "SELECT appoint_date , count(id) AS counter
@@ -148,7 +149,11 @@
     $result = mysqli_query($conn,$SQL);
     if (mysqli_num_rows($result) > 0) {
       while($row = mysqli_fetch_array($result)) {
-          $count = $row[1];
+          for($i=0;$i<count($dateval);$i++){
+            if($dateval[$i] = $row[0]){
+              $count[$i] = $row[1];
+            }
+          }
       }
    }
 
