@@ -162,9 +162,9 @@
         break;
 }
 
-      $SQL = "SELECT count(id)
+      $SQL = "SELECT count(appointe_Date)
                   FROM vaccine_app
-                  WHERE appoint_date = '".$dateval[$i]."' ";
+                  WHERE appoint_date > '".$dateval[$i]."' AND  appoint_date < '".$dateval[$i]."'";
       $result = mysqli_query($conn,$SQL);
       $count = $result;
 
