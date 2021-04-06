@@ -65,7 +65,7 @@ $cid_lock_SQL = "SELECT *
 				$boolean = TRUE;
 				$strSQL = "INSERT INTO vaccine_app (target, province, city, sub, moo, station, code, title,name,surname,gender,birthdate,cid,tel,vacc,appoint_date,input_date,profile,userID)
 									VALUES ('5-ประชาชนทั่วไป', '74-สมุทรสาคร','02-กระทุ่มแบน', '".$_POST["thambon"]."', '".$_POST["moo"]."', 'โรงพยาบาลกระทุ่มแบน', '11304', '".$_POST["prename"]."',
-										 				'".$_POST["name"]."', '".$_POST["surname"]."','".$_POST["gender"]."', '".$_POST["bday"]."', '".$_POST["cid"]."', '".$_POST["tel"]."',".$boolean.", '".$_POST["appoint_date"]."', '".$date."','".$_POST["uprofile"]."', '".$_POST["uid"]."',)";
+										 				'".$_POST["name"]."', '".$_POST["surname"]."','".$_POST["gender"]."', '".$_POST["bday"]."', '".$_POST["cid"]."', '".$_POST["tel"]."',".$boolean.", '".$_POST["appoint_date"]."', '".$date."','".$_POST["uprofile"]."', '".$_POST["uid"]."')";
 
 				if(mysqli_query($conn,$strSQL)){
 
