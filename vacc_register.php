@@ -210,6 +210,13 @@
 
   };
 
+  $( "#bday" ).datepicker({
+    dateFormat: 'dd.mm.yy',
+    changeMonth: true,
+    changeYear: true,
+    yearRange: '-59:-18'
+});
+
     function initializeApp(data) {
 
 	$('#uid').val(data.context.userId);
