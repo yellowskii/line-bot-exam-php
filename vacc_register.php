@@ -72,22 +72,22 @@
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="cid">เลขบัตรประชาชน</label>
-<div class="col">
+<label  class="col-4" for="cid">เลขบัตรประชาชน</label>
+<div class="col-8">
  <input type="text" class="form-control mb-2" name="cid" id="cid" pattern="[0-9]{13}" required>
 </div>
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="tel">เบอร์โทรศัพท์</label>
-<div class="col">
+<label  class="col-4" for="tel">เบอร์โทรศัพท์</label>
+<div class="col-8">
  <input type="text" class="form-control mb-2" name="tel" id="tel" required>
 </div>
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="gender">เพศ</label>
-<div class="col">
+<label  class="col-4" for="gender">เพศ</label>
+<div class="col-8">
   <input type="radio" id="male" name="gender" value="ชาย">
   <label for="male">ชาย</label><br>
   <input type="radio" id="female" name="gender" value="หญิง">
@@ -96,9 +96,9 @@
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="thambon">ตำบล</label>
-<div class="col">
-  <select class="custom-select custom-select-lg" id="thambon" name="thambon" required>
+<label  class="col-4" for="thambon">ตำบล</label>
+<div class="col-8">
+  <select class="custom-select custom-select-lg mb-2" id="thambon" name="thambon" required>
     <option value="" selected>กรุณาเลือก</option>
     <option value="01-ตลาดกระทุ่มแบน">ตลาดกระทุ่มแบน</option>
     <option value="02-อ้อมน้อย">อ้อมน้อย</option>
@@ -115,24 +115,24 @@
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="moo">หมู่ที่</label>
-<div class="col">
+<label  class="col-4" for="moo">หมู่ที่</label>
+<div class="col-8">
  <input type="number" class="form-control mb-2" name="moo" id="moo">
 </div>
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="bday">วันเกิด</label>
-<div class="col">
+<label  class="col-4" for="bday">วันเกิด</label>
+<div class="col-8">
  <input type="text" class="form-control mb-2" name="bday" id="bday" required>
 </div>
 </div>
 
 
 <div class="input-group">
-<label  class="col-2" for="appoint_date">วันจอง</label>
-<div class="col">
-  <select class="custom-select custom-select-lg" id="appoint_date" name="appoint_date" required>
+<label  class="col-4" for="appoint_date">วันจอง</label>
+<div class="col-8">
+  <select class="custom-select custom-select-lg mb-2" id="appoint_date" name="appoint_date" required>
     <option value="" selected>กรุณาเลือก</option>
     <?php
 
