@@ -31,7 +31,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
@@ -65,7 +65,10 @@ $cid_lock_SQL = "SELECT *
 </div>
 
 	<?php
-		} else{
+} else{
+
+				 $bdatesplit = explode("-",$_POST["bday"]);
+				 $bdate = ($bdatesplit[0] - 543)."-".$bdatesplit[1]."-".$bdatesplit[2];
 
 				$date= date("Y-m-d");
 				$boolean = TRUE;
@@ -76,7 +79,7 @@ $cid_lock_SQL = "SELECT *
 				if(mysqli_query($conn,$strSQL)){
 
 						echo "ลงทะเบียนวัคซีนเสร็จสิ้น";
-
+						
 						$datesplit = explode("-",$_POST["appoint_date"]);
 
 					 switch ($datesplit[1]) {
