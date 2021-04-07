@@ -46,21 +46,21 @@
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
 
 <div class="input-group">
-<label  class="col-2" for="name">ชื่อ </label>
+<label  class="col-2 col-form-label" for="name">ชื่อ </label>
 <div class="col-8">
- <input type="text" class="form-control mb-2" name="name" id="name" required>
+ <input type="text" class="form-control" name="name" id="name" required>
 </div>
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="surname">นามสกุล </label>
+<label  class="col-2 col-form-label" for="surname">นามสกุล </label>
 <div class="col-8">
- <input type="text" class="form-control mb-2" name="surname" id="surname" required>
+ <input type="text" class="form-control" name="surname" id="surname" required>
 </div>
 </div>
 
 <div class="input-group">
-<label  class="col-2" for="prename">คำนำหน้า</label>
+<label  class="col-2 col-form-label" for="prename">คำนำหน้า</label>
 <div class="col-8">
   <input type="radio" id="male" name="prename" value="นาย">
   <label for="male">นาย</label><br>
