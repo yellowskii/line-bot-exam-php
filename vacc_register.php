@@ -231,7 +231,7 @@
   };
 
 	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th'),
-	 dateFormat: $.calendar.ISO_8601})
+	 dateFormat: 'yyyy-mm-dd'})
 /*
   function ageCount() {
     var now =new Date();                            //getting current date
