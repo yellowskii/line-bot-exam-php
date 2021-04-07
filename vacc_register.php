@@ -212,7 +212,7 @@
 <script src="bootstrap-select-1.13.9/dist/js/bootstrap-select.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.plus.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script
+<script type="text/javascript" src="js/jquery.plugin.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.thai.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.thai-th.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.picker.js"></script>
@@ -227,10 +227,10 @@
   					liff.closeWindow();
   	});
       });
-				$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th')});
+
   };
 
-
+	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th')})
 /*
   function ageCount() {
     var now =new Date();                            //getting current date
