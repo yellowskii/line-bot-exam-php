@@ -232,6 +232,10 @@
 
 	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th'),
 	 dateFormat: 'yyyy-mm-dd'})
+
+	 $('#bday').change(function () {
+    alert($('#bday').val());
+});
 /*
   function ageCount() {
     var now =new Date();                            //getting current date
