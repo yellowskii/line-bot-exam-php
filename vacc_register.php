@@ -212,10 +212,11 @@
 <script src="bootstrap-select-1.13.9/dist/js/bootstrap-select.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.plus.js"></script>
-<script type="text/javascript" src="js/jquery.plugin.js"></script>
-<script type="text/javascript" src="js/jquery.calendars.picker.js"></script>
-<script type="text/javascript" src="js/jquery.calendars.picker.lang.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.js"></script
+<script type="text/javascript" src="js/jquery.calendars.thai.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.thai-th.js"></script>
+<script type="text/javascript" src="js/jquery.calendars.picker.js"></script>
+<script type="text/javascript" src="js/jquery.calendars.picker-th.js"></script>
 <script>
 
   window.onload = function (e) {
