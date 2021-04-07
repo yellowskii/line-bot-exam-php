@@ -104,6 +104,9 @@ $cid_lock_SQL = "SELECT *
 
 						$pushID = $_POST["uid"];
 
+						$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+						$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+
 						$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
 						$response = $bot->pushMessage($pushID, $textMessageBuilder);
 						echo $i." ";
