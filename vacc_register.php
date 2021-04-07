@@ -123,7 +123,7 @@
 <div class="input-group">
 <label  class="col-2" for="bday">วันเกิด</label>
 <div class="col">
- <input type="date" class="form-control mb-2" name="bday" id="bday" min="1941-01-01" max="2004-01-01">
+ <input type="date" class="form-control mb-2" name="bday" id="bday" min="1941-01-01" max="2004-01-01" required>
 </div>
 </div>
 
@@ -220,8 +220,6 @@
   	});
 
       });
-
-
 
   };
 
