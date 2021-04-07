@@ -35,8 +35,7 @@
 
 </style>
   <body>
-
-  <div class="container border border-primary m-auto p-5 p-2" >
+  <div class="container h-100 border border-primary m-auto" >
 
     <h1 class="text-center">ลงทะเบียนวัคซีน</h1>
 
@@ -98,8 +97,8 @@
 <div class="input-group">
 <label  class="col-2" for="thambon">ตำบล</label>
 <div class="col">
-  <select class="custom-select custom-select-lg" id="thambon" name="thambon">
-    <option selected>กรุณาเลือก</option>
+  <select class="custom-select custom-select-lg" id="thambon" name="thambon" required>
+    <option value="" selected>กรุณาเลือก</option>
     <option value="01-ตลาดกระทุ่มแบน">ตลาดกระทุ่มแบน</option>
     <option value="02-อ้อมน้อย">อ้อมน้อย</option>
     <option value="03-ท่าไม้">ท่าไม้</option>
@@ -132,8 +131,8 @@
 <div class="input-group">
 <label  class="col-2" for="appoint_date">วันจอง</label>
 <div class="col">
-  <select class="custom-select custom-select-lg" id="appoint_date" name="appoint_date">
-    <option selected>กรุณาเลือก</option>
+  <select class="custom-select custom-select-lg" id="appoint_date" name="appoint_date" required>
+    <option value="" selected>กรุณาเลือก</option>
     <?php
 
 
@@ -181,7 +180,7 @@
         $datemonth = "พ.ค.";
         break;
       }
-      $datetext = $datesplit[2]." ".$datemonth." ".$time." ".$count[$i]." คน";
+      $datetext = $datesplit[2]." ".$datemonth." ".$time;
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
       }
     }
