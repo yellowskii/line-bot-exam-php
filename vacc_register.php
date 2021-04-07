@@ -47,21 +47,21 @@
 
 <div class="input-group">
 <label  class="col-2" for="name">ชื่อ </label>
-<div class="col">
+<div class="col-8">
  <input type="text" class="form-control mb-2" name="name" id="name" required>
 </div>
 </div>
 
 <div class="input-group">
 <label  class="col-2" for="surname">นามสกุล </label>
-<div class="col">
+<div class="col-8">
  <input type="text" class="form-control mb-2" name="surname" id="surname" required>
 </div>
 </div>
 
 <div class="input-group">
 <label  class="col-2" for="prename">คำนำหน้า</label>
-<div class="col">
+<div class="col-8">
   <input type="radio" id="male" name="prename" value="นาย">
   <label for="male">นาย</label><br>
   <input type="radio" id="female" name="prename" value="นาง">
