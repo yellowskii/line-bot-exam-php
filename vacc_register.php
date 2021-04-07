@@ -124,7 +124,7 @@
 <div class="input-group">
 <label  class="col-2" for="bday">วันเกิด</label>
 <div class="col">
- <input type="text" class="form-control mb-2" name="bday" id="bday" required>
+ <input type="date" class="form-control mb-2" name="bday" id="bday" required>
 </div>
 </div>
 
