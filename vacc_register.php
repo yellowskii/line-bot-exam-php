@@ -124,7 +124,7 @@
 <div class="input-group">
 <label  class="col-2" for="bday">วันเกิด</label>
 <div class="col">
- <input type="date" class="form-control mb-2" name="bday" id="bday" required>
+ <input type="text" class="form-control mb-2" name="bday" id="bday" required>
 </div>
 </div>
 
@@ -227,10 +227,10 @@
   					liff.closeWindow();
   	});
       });
-
+				$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th')});
   };
 
-	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th')});
+
 /*
   function ageCount() {
     var now =new Date();                            //getting current date
