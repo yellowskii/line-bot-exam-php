@@ -240,7 +240,7 @@
 
 		 var now = new Date();
 		 var currentY = now.getFullYear();
-		 var age = currentY - bdayY;
+		 var age = (currentY + 543) - bdayY;
 		alert(age);
 });
 /*
