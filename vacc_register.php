@@ -214,6 +214,7 @@
 <script type="text/javascript" src="js/jquery.calendars.plus.js"></script>
 <script type="text/javascript" src="js/jquery.plugin.js"></script>
 <script type="text/javascript" src="js/jquery.calendars.picker.js"></script>
+<script type="text/javascript" src="jquery.calendars.thai-th.js"></script>
 <script>
 
   window.onload = function (e) {
@@ -227,7 +228,7 @@
 
   };
 
-	$('#bday').calendarsPicker();
+	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai')});
 /*
   function ageCount() {
     var now =new Date();                            //getting current date
