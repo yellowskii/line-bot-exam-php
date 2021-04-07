@@ -235,10 +235,11 @@
 
 	 $('#bday').change(function () {
 		 var birthday = $('#bday').val();
-		 var ageF = ageCount();
-		alert(ageF);
+		 var bdab = new Date(birthday);
+		 var bdayY = bdab.getFullYear();
+		alert(bdayY);
 });
-
+/*
   function ageCount() {
     var now =new Date();                            //getting current date
     var currentY = now.getFullYear();                //extracting year from the date
@@ -252,10 +253,10 @@
     var ageY =currentY - prevY;
     var ageM =Math.abs(currentM- prevM);          //converting any negative value to positive
 
-    //document.getElementById('demo').innerHTML = ageY +' years ' + ageM +' months';
-		return ageY;
-}
+    document.getElementById('demo').innerHTML = ageY +' years ' + ageM +' months';
 
+}
+    */
 
 
     function initializeApp(data) {
