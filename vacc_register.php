@@ -234,7 +234,8 @@
 	 dateFormat: 'yyyy-mm-dd'})
 
 	 $('#bday').change(function () {
-    alert($('#bday').val());
+		 var birthday = $('#bday').val();
+		alert(birthday);
 });
 /*
   function ageCount() {
