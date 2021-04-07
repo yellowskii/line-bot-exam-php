@@ -1,6 +1,12 @@
 <!doctype html>
 
 <?php
+				require "vendor/autoload.php";
+
+				$access_token = 'zl7UVkKmDY7W6O54r+dc1psZR7C6Ro5YB7i9h0g6H2zibRxKrrYCRsL6upz6T1r6fsNgiB5XCqzCai1eRNI9EG8Ye2bzi5kE5H4eaLk1wwCzcjl1CJqn2Dl5EUUd1ZmY7T0KISyX/ANc8wrQIXGsEQdB04t89/1O/w1cDnyilFU=';
+
+				$channelSecret = '977670d76e802dffac5da90001614136';
+
 
 		//Get DB
 				$server = "voipktbh.dyndns.org";
@@ -70,6 +76,39 @@ $cid_lock_SQL = "SELECT *
 				if(mysqli_query($conn,$strSQL)){
 
 						echo "ลงทะเบียนวัคซีนเสร็จสิ้น";
+
+						$datesplit = explode("-",$_POST["appoint_date"]);
+
+					 switch ($datesplit[1]) {
+					 case "01":
+							 $datemonth = "ม.ค.";
+							 break;
+					 case "02":
+							 $datemonth = "ก.พ.";
+							 break;
+					 case "03":
+							 $datemonth = "มี.ค.";
+							 break;
+					 case "04":
+							 $datemonth = "เม.ย.";
+							 break;
+					 case "05":
+							 $datemonth = "พ.ค.";
+							 break;
+						 }
+						 $datetext = $datesplit[2]." ".$datemonth;
+
+						$text = "คุณ ".$_POST["name"]."​ ".$_POST["surname"]." ได้ลงทะเบียนจองคิวฉีดวัคซีนโควิค
+						วันที่ ".$datetext." เวลา 12.30-14.00น. เรียบร้อยแล้ว
+						กรุณานำบัตรประชาชน มาที่ชั้น G อาคารหลังใหม่ 10 ชั้น  ตามวันเวลานัด และแนะนำให้ add line หมอพร้อม  https://line.me/R/ti/p/%40475ptmfj ซึ่งจะใช้ติดตามอาการหลังฉีด เพื่อความสะดวกด้วยค่ะ";
+
+						$pushID = $_POST["uid"];
+
+						$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+						$response = $bot->pushMessage($pushID, $textMessageBuilder);
+						echo $i." ";
+						echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+
 
 				} else {
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
