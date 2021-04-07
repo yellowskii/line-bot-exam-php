@@ -237,7 +237,11 @@
 		 var birthday = $('#bday').val();
 		 var bdab = new Date(birthday);
 		 var bdayY = bdab.getFullYear();
-		alert(bdayY);
+
+		 var now = new Date();
+		 var currentY = now.getFullYear();
+		 var age = currentY - bdayY;
+		alert(age);
 });
 /*
   function ageCount() {
