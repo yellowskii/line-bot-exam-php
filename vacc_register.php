@@ -237,7 +237,7 @@
 		 var birthday = $('#bday').val();
 		 var bdab = new Date(birthday);
 		 var bdayY = bdab.getFullYear();
-		 var bdayM = bdab.getMonth();
+		// var bdayM = bdab.getMonth();
 
 		 var date_regex =  /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 		 if (!(date_regex.test(birthday))) {
@@ -248,11 +248,11 @@
 		 var now = new Date();
 		 var currentY = now.getFullYear();
 		 var currentM = now.getMonth();
-		 var ageM = currentM - bdayM;
-		 var abs_ageM = Math.abs(ageM);
+		// var ageM = currentM - bdayM;
+		// var abs_ageM = Math.abs(ageM);
 		 var age = (currentY + 543) - bdayY;
 		 if(age < 18 || age > 59){
-			 var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง เนื่องจากคุณมีอายุ ".age." ปี ".abs_ageM." เดือน วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
+			 var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง เนื่องจากคุณมีอายุ ".age." ปี วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
 			 alert(agetext);
 			 $('#bday').val("");
 		 }
