@@ -40,7 +40,7 @@
 
     <h1 class="text-center">ลงทะเบียนวัคซีน</h1>
 
-          <form action="vacc_save.php" method="post">
+          <form id="myform" action="vacc_save.php" method="post">
 
   <input type="hidden" class="form-control" name="uid" id="uid" required>
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
@@ -138,8 +138,8 @@
 
 
 
-    $dateval = array("2021-04-16","2021-04-19","2021-04-20","2021-04-21","2021-04-22","2021-04-23","2021-04-26",
-                  "2021-04-27","2021-04-28","2021-04-29","2021-04-30","2021-05-03","2021-05-05","2021-05-06","2021-05-07");
+    $dateval = array("2021-04-16","2021-04-19","2021-04-20","2021-04-21","2021-04-22","2021-04-23",	"2021-04-25","2021-04-26",
+                  "2021-04-27","2021-04-28","2021-04-29","2021-04-30","2021-05-02","2021-05-03","2021-05-05","2021-05-06","2021-05-07");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
     $limit = 300;
@@ -248,6 +248,23 @@
 		 }
 
 });
+
+$('#myform').submit(function () {
+	var birthday = $('#bday').val();
+	var bdab = new Date(birthday);
+	var bdayY = bdab.getFullYear();
+
+	var now = new Date();
+	var currentY = now.getFullYear();
+	var age = (currentY + 543) - bdayY;
+	if(age < 18 || age > 59){
+		var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
+		alert(agetext);
+		$('#bday').val("");
+	}
+
+});
+
     function initializeApp(data) {
 
 	$('#uid').val(data.context.userId);
