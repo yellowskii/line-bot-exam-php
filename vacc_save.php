@@ -6,7 +6,6 @@
 				$access_token = 'wFJmyBRjsUu7s8WP2ucTr6KhCMjl0h3Wt8UXcbwRM9IG0sRVs6QXWSzUGQ/WX4HCA9zzufn0PVY+jr87W1jf3rD6ZAL4o/LXMgzFgxMWgokB5BAFUGGVW9S+KOKDD1HVTa5bZ37mw++zLQsFdGz+vAdB04t89/1O/w1cDnyilFU=';
 
 				$channelSecret = '977670d76e802dffac5da90001614136';
-977670d76e802dffac5da90001614136
 
 		//Get DB
 				$server = "voipktbh.dyndns.org";
