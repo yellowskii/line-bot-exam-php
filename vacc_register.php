@@ -249,13 +249,13 @@
 		 var currentM = now.getMonth();
 		 var ageY = (currentY + 543) - bdayY;
 		 var ageM = currentM - bdayM;
-		 var abs_ageM = Math.abs(ageM);
-		 /*if(ageM < 0){
+		 /*var abs_ageM = Math.abs(ageM);
+		 if(ageM < 0){
 			 ageY = ageY - 1;
 		 }*/
 
 		 if(ageY < 18 || ageY > 59){
-			 var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง เนื่องจากท่านอายุ".ageY." ปี ".abs_ageM." เดือน วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
+			 var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง เนื่องจากท่านอายุ".ageY." ปี ".ageM." เดือน วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
 			 alert(agetext);
 			 $('#bday').val("");
 		 }
