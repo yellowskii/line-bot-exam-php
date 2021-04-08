@@ -122,7 +122,7 @@
 </div>
 
 <div class="input-group">
-<label  class="col-4" for="bday">วันเกิด (กรุณาระบุเป็นพ.ศ.และใช้รูปแบบดังนี้ 2542-12-31)</label>
+<label  class="col-4" for="bday">วันเกิด (กรุณาระบุเป็นพ.ศ.และใช้รูปแบบดังนี้ 2540-01-31)</label>
 <div class="col-8">
  <input type="text" class="form-control mb-2" name="bday" id="bday" required>
 </div>
@@ -240,7 +240,7 @@
 
 		 var date_regex =  /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 		 if (!(date_regex.test(birthday))) {
-		     alert("กรุณาใส่รูุปแบบของวันเกิดให้ถูกต้อง(ตัวอย่าง 2540-01-01) หรือใช้ปฏิทิน");
+		     alert("กรุณาใส่รูุปแบบของวันเกิดให้ถูกต้อง(ตัวอย่าง 2540-01-31) หรือใช้ปฏิทิน");
 				 $('#bday').val("");
 		 }
 		else{
