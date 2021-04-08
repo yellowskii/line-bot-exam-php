@@ -246,7 +246,7 @@
 		else{
 		 var now = new Date();
 		 var currentY = now.getFullYear();
-		 var currentM = now.getMonth();
+		 //var currentM = now.getMonth();
 		 var ageY = (currentY + 543) - bdayY;
 		 //var ageM = currentM - bdayM;
 		 /*var abs_ageM = Math.abs(ageM);
