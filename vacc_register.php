@@ -237,7 +237,7 @@
 		 var birthday = $('#bday').val();
 		 var bdab = new Date(birthday);
 		 var bdayY = bdab.getFullYear();
-		// var bdayM = bdab.getMonth();
+		 var bdayM = bdab.getMonth();
 		 var date_regex =  /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 		 if (!(date_regex.test(birthday))) {
 		     alert("กรุณาใส่รูุปแบบของวันเกิดให้ถูกต้อง(ตัวอย่าง 2540-01-31) หรือใช้ปฏิทิน");
@@ -246,16 +246,11 @@
 		else{
 		 var now = new Date();
 		 var currentY = now.getFullYear();
-		 //var currentM = now.getMonth();
-		 var ageY = (currentY + 543) - bdayY;
-		 //var ageM = currentM - bdayM;
-		 /*var abs_ageM = Math.abs(ageM);
-		 if(ageM < 0){
-			 ageY = ageY - 1;
-		 }*/
-
-		 if(ageY < 18 || ageY > 59){
-			 var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง เนื่องจากท่านอายุ".ageY." ปี วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
+		 var currentM = now.getMonth();
+		 var age = (currentY + 543) - bdayY;
+		 var ageM = currentM - bdayM;
+		 if(age < 18 || age > 59){
+			 var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง เนื่องจากท่านจะมีอายุ ".age." ปี วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
 			 alert(agetext);
 			 $('#bday').val("");
 		 }
