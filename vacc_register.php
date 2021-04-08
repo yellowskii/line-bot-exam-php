@@ -124,7 +124,7 @@
 <div class="input-group">
 <label  class="col-4" for="bday">วันเกิด</label>
 <div class="col-8">
- <input type="text" class="form-control mb-2" name="bday" id="bday" readonly required>
+ <input type="text" class="form-control mb-2" name="bday" id="bday" required>
 </div>
 </div>
 
@@ -232,6 +232,11 @@
 
 	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th'),
 	 dateFormat: 'yyyy-mm-dd'})
+
+
+	 $('#bday').keydown(function(e){
+	        e.preventDefault();
+	    });
 
 	 $('#bday').change(function () {
 		 var birthday = $('#bday').val();
