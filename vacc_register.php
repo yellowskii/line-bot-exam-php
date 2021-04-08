@@ -62,7 +62,7 @@
 <div class="input-group">
 <label  class="col-4 col-form-label" for="prename">คำนำหน้า</label>
 <div class="col-8">
-  <input type="radio" id="male" name="prename" value="นาย">
+  <input type="radio" id="male" name="prename" value="นาย" required>
   <label for="male">นาย</label><br>
   <input type="radio" id="female" name="prename" value="นาง">
   <label for="female">นาง</label><br>
@@ -88,7 +88,7 @@
 <div class="input-group">
 <label  class="col-4" for="gender">เพศ</label>
 <div class="col-8">
-  <input type="radio" id="male" name="gender" value="ชาย">
+  <input type="radio" id="male" name="gender" value="ชาย" required>
   <label for="male">ชาย</label><br>
   <input type="radio" id="female" name="gender" value="หญิง">
   <label for="female">หญิง</label><br>
@@ -142,7 +142,7 @@
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30","2021-05-03","2021-05-05","2021-05-06","2021-05-07");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
-    $limit = 3;
+    $limit = 300;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
@@ -181,7 +181,7 @@
         $datemonth = "พ.ค.";
         break;
       }
-      $datetext = $datesplit[2]." ".$datemonth." ".$time." ".$count[$i]."/3";
+      $datetext = $datesplit[2]." ".$datemonth." ".$time;
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
       }
     }
@@ -248,26 +248,6 @@
 		 }
 
 });
-/*
-  function ageCount() {
-    var now =new Date();                            //getting current date
-    var currentY = now.getFullYear();                //extracting year from the date
-    var currentM = now.getMonth();                   //extracting month from the date
-
-    var dobget =document.getElementById("#bday").value; //getting user input
-    var dob= new Date(dobget);                             //formatting input as date
-    var prevY= dob.getFullYear();                          //extracting year from input date
-    var prevM= dob.getMonth();                             //extracting month from input date
-
-    var ageY =currentY - prevY;
-    var ageM =Math.abs(currentM- prevM);          //converting any negative value to positive
-
-    document.getElementById('demo').innerHTML = ageY +' years ' + ageM +' months';
-
-}
-    */
-
-
     function initializeApp(data) {
 
 	$('#uid').val(data.context.userId);

@@ -3,10 +3,10 @@
 <?php
 				require "vendor/autoload.php";
 
-				$access_token = 'zl7UVkKmDY7W6O54r+dc1psZR7C6Ro5YB7i9h0g6H2zibRxKrrYCRsL6upz6T1r6fsNgiB5XCqzCai1eRNI9EG8Ye2bzi5kE5H4eaLk1wwCzcjl1CJqn2Dl5EUUd1ZmY7T0KISyX/ANc8wrQIXGsEQdB04t89/1O/w1cDnyilFU=';
+				$access_token = 'wFJmyBRjsUu7s8WP2ucTr6KhCMjl0h3Wt8UXcbwRM9IG0sRVs6QXWSzUGQ/WX4HCA9zzufn0PVY+jr87W1jf3rD6ZAL4o/LXMgzFgxMWgokB5BAFUGGVW9S+KOKDD1HVTa5bZ37mw++zLQsFdGz+vAdB04t89/1O/w1cDnyilFU=';
 
 				$channelSecret = '977670d76e802dffac5da90001614136';
-
+977670d76e802dffac5da90001614136
 
 		//Get DB
 				$server = "voipktbh.dyndns.org";
@@ -50,7 +50,7 @@ $cid_lock_SQL = "SELECT *
 			$result2 = mysqli_query($conn,$cid_lock_SQL);
 			if (mysqli_num_rows($result2) > 0){
 
-				$text = "หมายเลขประชาชนนี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ มีข้อสงสัยกรุณาติดต่อ XXX-XXXXXXX";
+				$text = "หมายเลขประชาชนนี้ได้ทำการลงทะเบียนไปแล้ว ขออภัยในความไม่สะดวกค่ะ มีข้อสงสัยกรุณาติดต่อเจ้าหน้าที่";
 
 			}
 
@@ -112,11 +112,12 @@ $cid_lock_SQL = "SELECT *
 
 						$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
 						$response = $bot->pushMessage($pushID, $textMessageBuilder);
-						echo $i." ";
-						echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+/*					echo $i." ";
+						echo $response->getHTTPStatus() . ' ' . $response->getRawBody();*/
 
 
 				} else {
+
 				echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 				}
 
