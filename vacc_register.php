@@ -233,7 +233,7 @@
 	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th'),
 	 dateFormat: 'yyyy-mm-dd'})
 
-	 $('#bday').on('keydown paste focus mousedown', function(e){
+	 $('#bday').on('keydown paste mousedown', function(e){
 	        if(e.keyCode != 9) // ignore tab
 	            e.preventDefault();
 	    });
