@@ -124,7 +124,7 @@
 <div class="input-group">
 <label  class="col-4" for="bday">วันเกิด</label>
 <div class="col-8">
- <input type="text" class="form-control mb-2" name="bday" id="bday" required>
+ <input type="text" class="form-control mb-2" name="bday" id="bday" readonly required>
 </div>
 </div>
 
@@ -246,22 +246,6 @@
 			 alert(agetext);
 			 $('#bday').val("");
 		 }
-
-});
-
-$('#myform').submit(function () {
-	var birthday = $('#bday').val();
-	var bdab = new Date(birthday);
-	var bdayY = bdab.getFullYear();
-
-	var now = new Date();
-	var currentY = now.getFullYear();
-	var age = (currentY + 543) - bdayY;
-	if(age < 18 || age > 59){
-		var agetext = "กรุณาเลือกวันเกิดให้ถูกต้อง วัคซีนนี้เปิดให้บริการเฉพาะผู้ที่มีอายุ 18-59 ปีเท่านั้น";
-		alert(agetext);
-		$('#bday').val("");
-	}
 
 });
 
