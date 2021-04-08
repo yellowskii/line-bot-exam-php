@@ -122,7 +122,7 @@
 </div>
 
 <div class="input-group">
-<label  class="col-4" for="bday">วันเกิด (หากพิม์เองกรุณาระบุเป็นพ.ศ.และใช้รูปแบบดังนี้ 2542/12/31)</label>
+<label  class="col-4" for="bday">วันเกิด (กรุณาระบุเป็นพ.ศ.และใช้รูปแบบดังนี้ 2542-12-31)</label>
 <div class="col-8">
  <input type="text" class="form-control mb-2" name="bday" id="bday" required>
 </div>
