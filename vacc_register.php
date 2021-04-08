@@ -233,16 +233,17 @@
 	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th'),
 	 dateFormat: 'yyyy-mm-dd'})
 
-	 $('#bday').on('keydown paste mousedown', function(e){
-	        if(e.keyCode != 9) // ignore tab
-	            e.preventDefault();
-	    });
-
 	 $('#bday').change(function () {
 		 var birthday = $('#bday').val();
 		 var bdab = new Date(birthday);
 		 var bdayY = bdab.getFullYear();
 
+		 var date_regex =  /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+		 if (!(date_regex.test(birthday))) {
+		     alert("กรุณาใส่รูุปแบบของวันเกิดให้ถูกต้อง(ตัวอย่าง 2540-01-01) หรือใช้ปฏิทิน");
+				 $('#bday').val("");
+		 }
+		else{
 		 var now = new Date();
 		 var currentY = now.getFullYear();
 		 var age = (currentY + 543) - bdayY;
@@ -251,7 +252,7 @@
 			 alert(agetext);
 			 $('#bday').val("");
 		 }
-
+		 }
 });
 
     function initializeApp(data) {
