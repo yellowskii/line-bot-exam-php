@@ -233,7 +233,7 @@
 	$('#bday').calendarsPicker({calendar: $.calendars.instance('thai','th'),
 	 dateFormat: 'yyyy-mm-dd'})
 
-	 $('#bday').on('input',function(e){
+	 $('#bday').change(function () {
 		 var birthday = $('#bday').val();
 		 var bdab = new Date(birthday);
 		 var bdayY = bdab.getFullYear();
