@@ -142,7 +142,7 @@
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30","2021-05-03","2021-05-05","2021-05-06","2021-05-07");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
-    $limit = 300;
+    $limit = 3;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
@@ -181,7 +181,7 @@
         $datemonth = "พ.ค.";
         break;
       }
-      $datetext = $datesplit[2]." ".$datemonth." ".$time." ".$count[$i]."/300";
+      $datetext = $datesplit[2]." ".$datemonth." ".$time." ".$count[$i]."/3";
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
       }
     }
