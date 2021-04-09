@@ -7,6 +7,10 @@
 
 				$channelSecret = '977670d76e802dffac5da90001614136';
 
+				if (!isset($_POST["uid"])){
+  			exit(0);
+			}
+
 		//Get DB
 				$server = "voipktbh.dyndns.org";
 				$suser = "botadmin";
@@ -55,7 +59,12 @@ $cid_lock_SQL = "SELECT *
 
 			if(isset($text)){
 				echo $text;
+				$message = "บุคคลนี้ลงทะเบียนจองวัคซีนแล้ว แก้ไขไม่ได้
+ถ้าไม่มีข้อความตอบกลับ
+ให้ พิมพ์ 'ชื่อ นามสกุล เลข13หลัก ขอตรวจสอบการจอง'
+แล้วจะมีตอบกลับหลังตรวจสอบข้อมูล ใน 2-3 วัน";
 
+echo "<script type='text/javascript'>alert('$message');</script>";
  ?>
 
 
