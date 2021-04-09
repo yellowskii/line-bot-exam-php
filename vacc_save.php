@@ -64,7 +64,7 @@ $cid_lock_SQL = "SELECT *
 ให้ พิมพ์ 'ชื่อ นามสกุล เลข13หลัก ขอตรวจสอบการจอง'
 แล้วจะมีตอบกลับหลังตรวจสอบข้อมูล ใน 2-3 วัน";
 
-echo "<script type='text/javascript'>alert('$message');</script>";
+echo "<script type='text/javascript'>alert('".$message."');</script>";
  ?>
 
 
