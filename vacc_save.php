@@ -46,10 +46,25 @@
 
 			<div class="container border border-primary m-auto p-5 p-2" >
 <?php
-
-$cid_lock_SQL = "SELECT *
-									FROM vaccine_app
-									WHERE cid = '".$_POST["cid"]."' ";
+				
+ $limit = 300;
+  $count_SQL = "SELECT appoint_date , count(id) AS counter
+                FROM vaccine_app
+		WHERE appoint_date = ".$_POST["appoint_date"]."
+                GROUP BY appoint_date";
+    $result3 = mysqli_query($conn,$count_SQL);
+    if (mysqli_num_rows($result3) > 0) {
+      while($row = mysqli_fetch_array($result3)) {
+          if($row[1] >= $limit)
+	    $text = "<div class='text-danger'>เนื่องจากวันที่เลือกจองของวัคซีนนี้เต็มจำนวนแล้ว กรุณาเลือกวันอื่นด้วยค่ะ</div>";
+      }
+	   
+   }				
+				
+				
+			$cid_lock_SQL = "SELECT *
+					FROM vaccine_app
+					WHERE cid = '".$_POST["cid"]."' ";
 			$result2 = mysqli_query($conn,$cid_lock_SQL);
 			if (mysqli_num_rows($result2) > 0){
 
@@ -58,8 +73,8 @@ $cid_lock_SQL = "SELECT *
 ให้ พิมพ์ 'ชื่อ นามสกุล เลข13หลัก ขอตรวจสอบการจอง' </br>
 แล้วจะมีตอบกลับหลังตรวจสอบข้อมูล ใน 2-3 วัน</div>";
 
-			}
-
+			}	
+				
 			if(isset($text)){
 				echo $text;
 
