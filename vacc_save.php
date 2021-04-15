@@ -47,7 +47,7 @@
 			<div class="container border border-primary m-auto p-5 p-2" >
 <?php
 				
- $limit = 300;
+ $limit = 200;
   $count_SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
 		WHERE appoint_date = ".$_POST["appoint_date"]."
