@@ -50,7 +50,7 @@
  $limit = 200;
   $count_SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
-		WHERE appoint_date = ".$_POST["appoint_date"]."
+		WHERE appoint_date = '".$_POST["appoint_date"]."'
                 GROUP BY appoint_date";
     $result3 = mysqli_query($conn,$count_SQL);
     if (mysqli_num_rows($result3) > 0) {
