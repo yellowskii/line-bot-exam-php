@@ -53,7 +53,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
-if ($response->isSuccced()){
+if ($response->isSucceeded()){
     echo "สำเร็จ";
     return;
 }
