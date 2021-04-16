@@ -54,8 +54,8 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
-$response = $bot->multicast($usr_array, $textMessageBuilder);
+//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
+$response = $bot->multicast($usr_array, $msg);
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
