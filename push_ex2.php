@@ -51,6 +51,14 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
+$num = count($usr_array);
+
+
+for($i=0;$i<$num;$i++){
+echo $i." ".$usr_array[$i]."<br>";
+
+}
+/*
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
 if ($response->isSucceeded()){
@@ -59,5 +67,5 @@ if ($response->isSucceeded()){
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
-
+*/
 ?>
