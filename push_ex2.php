@@ -1,8 +1,6 @@
 
 <?php
 
-
-
 require "vendor/autoload.php";
 
 $access_token = 'wFJmyBRjsUu7s8WP2ucTr6KhCMjl0h3Wt8UXcbwRM9IG0sRVs6QXWSzUGQ/WX4HCA9zzufn0PVY+jr87W1jf3rD6ZAL4o/LXMgzFgxMWgokB5BAFUGGVW9S+KOKDD1HVTa5bZ37mw++zLQsFdGz+vAdB04t89/1O/w1cDnyilFU=';
@@ -42,7 +40,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
 
 
 
-    $msg = "เนื่องจาก คำสั่งจากสาธารณสุขจังหวัดให้ รพ.เร่งฉีดวัคซีนล็อตนี้ให้หมด ก่อน 30 เม.ย.
+$msg = "เนื่องจาก คำสั่งจากสาธารณสุขจังหวัดให้ รพ.เร่งฉีดวัคซีนล็อตนี้ให้หมด ก่อน 30 เม.ย.
 ดังนั้นวันที่ 2-7 พ.ค. จะไม่มีวัคซีนเข็ม1 ให้แล้ว
 
 ผู้จองวัคซีนในวันที่  2-7 พ.ค.ทุกคน  สามารถนำข้อความการจองเดิมด้านบน  มาขอรับวัคซีนที่ รพ.กระทุ่มแบน ในช่วงวันที่ 19-30 เม.ย.  เวลา 12.30-14.00 
@@ -55,6 +53,12 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $num = count($usr_array);
 
+for($i=0;$i<$num;$i++){
+
+echo $i." ".$usr_array[$i]."<br>"; 
+
+}
+/*
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
 if ($response->isSucceeded()){
@@ -62,5 +66,5 @@ if ($response->isSucceeded()){
     return;
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-
+*/
 ?>
