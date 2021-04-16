@@ -55,10 +55,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
-$bot->multicast($usr_array, $textMessageBuilder);
-
-/*$response = 
-
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();*/
+$response = $bot->multicast($usr_array, $textMessageBuilder);
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
