@@ -142,7 +142,7 @@
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
-    $limit = 200;
+    $limit = 300;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
