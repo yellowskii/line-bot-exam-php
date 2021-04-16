@@ -25,7 +25,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
   }
     mysqli_set_charset($conn, "utf8");
 
-    $strSQL = "SELECT DISTINCT userID FROM vaccine_app WHERE appoint_date = '2021-05-01' ";
+    $strSQL = "SELECT DISTINCT userID FROM vaccine_app WHERE appoint_date = '2021-05-02' ";
 
     $usr_array = array();
     $result = mysqli_query($conn,$strSQL);
@@ -57,10 +57,11 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 for($i=0;$i<$num;$i++){
 
 $pushID = $usr_array[$i];
-
+    echo $i." ".$pushID." " ;
+/*
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 echo $i." ";
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-
+*/
 }
