@@ -47,15 +47,17 @@ $channelSecret = '977670d76e802dffac5da90001614136';
 ยกเว้นวันเสาร์ที่ 24 เม.ย. รพ.หยุดให้บริการวัคซีน
 ขออภัยในความไม่สะดวกในครั้งนี้";
 
-$num = count($usr_array);
-
-
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
-//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
-$response = $bot->multicast($usr_array, $msg);
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
+$response = $bot->multicast($usr_array, $textMessageBuilder);
+if ($response->isSuccced()){
+    echo "สำเร็จ";
+    return;
+}
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
+?>
