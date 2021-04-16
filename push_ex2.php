@@ -25,7 +25,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
   }
     mysqli_set_charset($conn, "utf8");
 
-    $strSQL = "SELECT DISTINCT userID FROM vaccine_app WHERE appoint_date > '2021-05-01' ";
+    $strSQL = "SELECT DISTINCT userID FROM vaccine_app WHERE appoint_date = '2021-05-01' ";
 
     $usr_array = array();
     $result = mysqli_query($conn,$strSQL);
