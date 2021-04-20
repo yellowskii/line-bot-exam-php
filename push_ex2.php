@@ -58,7 +58,7 @@ for($i=0;$i<$num;$i++){
 echo $i." ".$usr_array[$i]."<br>"; 
 
 }
-/*
+
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
 if ($response->isSucceeded()){
@@ -67,5 +67,5 @@ if ($response->isSucceeded()){
     return;
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-*/
+
 ?>
