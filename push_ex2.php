@@ -63,6 +63,7 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
 if ($response->isSucceeded()){
     echo "สำเร็จ";
+    echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
     return;
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
