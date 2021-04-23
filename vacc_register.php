@@ -40,7 +40,7 @@
 
     <h1 class="text-center">ลงทะเบียนวัคซีน</h1>
 
-          <form id="myform" action=".php" method="post">
+          <form id="myform" action="vacc_save.php" method="post">
 
   <input type="hidden" class="form-control" name="uid" id="uid" required>
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
@@ -142,7 +142,7 @@
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30");
     $count = array_fill(0, count($dateval), '0');
     $time = "12:30 น.";
-    $limit = 200;
+    $limit = 100;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
