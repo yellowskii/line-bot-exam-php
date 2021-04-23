@@ -47,10 +47,10 @@
 			<div class="container border border-primary m-auto p-5 p-2" >
 <?php
 				
- $limit = 200;
+ $limit = 100;
   $count_SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
-		WHERE appoint_date = '".$_POST["appoint_date"]."'
+		WHERE appoint_date = '".$_POST["appoint_date"]."' AND input_date > '2021-04-17'
                 GROUP BY appoint_date";
     $result3 = mysqli_query($conn,$count_SQL);
     if (mysqli_num_rows($result3) > 0) {
