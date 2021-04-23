@@ -23,7 +23,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
   }
     mysqli_set_charset($conn, "utf8");
 
-    $strSQL = "SELECT DISTINCT userID FROM vaccine_app WHERE appoint_date > '2021-05-01' ";
+    $strSQL = "SELECT DISTINCT userID FROM vaccine_app ";
 
     $usr_array = array();
     $result = mysqli_query($conn,$strSQL);
@@ -40,12 +40,13 @@ $channelSecret = '977670d76e802dffac5da90001614136';
 
 
 
-$msg = "เนื่องจาก คำสั่งจากสาธารณสุขจังหวัดให้ รพ.เร่งฉีดวัคซีนล็อตนี้ให้หมด ก่อน 30 เม.ย.
-ดังนั้นวันที่ 2-7 พ.ค. จะไม่มีวัคซีนเข็ม1 ให้แล้ว
+$msg = "ผู้ที่จองวัคซีนออนไลน์ ในวันที่ 16 - 22 เม.ย. แล้วผิดนัดยังไม่ได้มารับวัคซีน
+รพ.จะถือว่าท่านสละสิทธิ์ แล้ว
+เนื่องจากวัคซีนมีจำกัด และต้องนำมาจัดสรรให้ผู้ที่ต้องการวัคซีนอีกจำนวนมาก
+และ รพ. จะหยุดให้บริการวัคซีนเข็ม 1  ในวันที่ 30 เม.ย.นี้ แล้ว
 
-ผู้จองวัคซีนในวันที่  2-7 พ.ค.ทุกคน  สามารถนำข้อความการจองเดิมด้านบน  มาขอรับวัคซีนที่ รพ.กระทุ่มแบน ในช่วงวันที่ 19-30 เม.ย.  เวลา 12.30-14.00 
-ยกเว้นวันเสาร์ที่ 24 เม.ย. รพ.หยุดให้บริการวัคซีน
-ขออภัยในความไม่สะดวกในครั้งนี้";
+ผู้ที่จองสำเร็จแล้วมีข้อความตอบกลับ สามารถนำข้อความมารับบริการ ในวันที่ 25-30 เม.ย. เวลา 12.30-14.00 น. และต้องนำเอกสารหลักฐานการอาศัยหรือทำงานใน กระทุ่มแบน เช่น บัตรประชาชน  ทะเบียนบ้าน หนังสือรับรองการทำงาน บิลค่าน้ำค่าไฟ เป็นต้น  หรือต้องเป็นผู้ที่มีสิทธิรักษาที่รพ.กระทุ่มแบน
+สำหรับผู้ที่ไม่มีหลักฐาน รพ.ขอสงวนสิทธิ ปฏิเสธการให้บริการวัคซีน";
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
@@ -58,7 +59,7 @@ for($i=0;$i<$num;$i++){
 echo $i." ".$usr_array[$i]."<br>"; 
 
 }
-
+/*
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
 if ($response->isSucceeded()){
@@ -67,5 +68,5 @@ if ($response->isSucceeded()){
     return;
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-
+*/
 ?>
