@@ -73,8 +73,7 @@ echo $i." ".$usr_array[$j][$i]." ".$g."<br>";
     $response = $bot->multicast($usr_array[$j], $textMessageBuilder);
 if ($response->isSucceeded()){
     echo "สำเร็จ";
-    echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-    return;
+    
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
     
