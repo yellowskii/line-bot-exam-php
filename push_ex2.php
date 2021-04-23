@@ -36,7 +36,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
                         $set++;
                        $count = 0;
                    }
-            array_push($usr_array[$set] , $row["0"]);
+            $usr_array[$set][] = $row["0"];
             $count++;
             }
         }
