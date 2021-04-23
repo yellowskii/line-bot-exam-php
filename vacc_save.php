@@ -93,7 +93,7 @@
 
 				$date= date("Y-m-d");
 				$boolean = TRUE;
-				$strSQL = "INSE INTO vaccine_app (target, province, city, sub, moo, station, code, title,name,surname,gender,birthdate,cid,tel,vacc,appoint_date,input_date,profile,userID)
+				$strSQL = "INSERT INTO vaccine_app (target, province, city, sub, moo, station, code, title,name,surname,gender,birthdate,cid,tel,vacc,appoint_date,input_date,profile,userID)
 									VALUES ('5-ประชาชนทั่วไป', '74-สมุทรสาคร','02-กระทุ่มแบน', '".$_POST["thambon"]."', '".$_POST["moo"]."', 'โรงพยาบาลกระทุ่มแบน', '11304', '".$_POST["prename"]."',
 										 				'".$_POST["name"]."', '".$_POST["surname"]."','".$_POST["gender"]."', '".$bdate."', '".$_POST["cid"]."', '".$_POST["tel"]."',".$boolean.", '".$_POST["appoint_date"]."', '".$date."','".$_POST["uprofile"]."', '".$_POST["uid"]."')";
 
@@ -122,8 +122,8 @@
 						 }
 						 $datetext = $datesplit[2]." ".$datemonth;
 
-						$text = "คุณ ".$_POST["name"]."​ ".$_POST["surname"]." ได้ลงทะเบียนจองคิวฉีดวัคซีนโควิด
-วันที่ ".$datetext." เวลา 12.30-14.00น. เรียบร้อยแล้ว
+						$text = "คุณ ".$_POST["name"]." ".$_POST["surname"]." ได้ลงทะเบียนจองคิวฉีดวัคซีนโควิด
+วันที่ ".$datetext." เรียบร้อยแล้ว
 กรุณานำบัตรประชาชน มาที่ชั้น G อาคารหลังใหม่ 10 ชั้น  ตามวันเวลานัด และแนะนำให้ add line หมอพร้อม  https://line.me/R/ti/p/%40475ptmfj ซึ่งจะใช้ติดตามอาการหลังฉีด เพื่อความสะดวกด้วยค่ะ";
 
 						$pushID = $_POST["uid"];
