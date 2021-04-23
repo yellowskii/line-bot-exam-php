@@ -32,7 +32,7 @@ $channelSecret = '977670d76e802dffac5da90001614136';
         // output data of each row
         while($row = mysqli_fetch_array($result)) {
             if($row["0"] != ""){ 
-                   if($count => 500 ){
+                   if($count >= 500 ){
                         $set++;
                        $count = 0;
                    }
@@ -59,7 +59,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
 $num = 500;
-for($j=0;$j<$set;$j++){
+for($j=0;$j<=$set;$j++){
 echo "SET".$j."<br>";     
 for($i=0;$i<$num;$i++){
 
