@@ -138,14 +138,16 @@
 
 
 
-    $dateval = array("2021-04-16","2021-04-19","2021-04-20","2021-04-21","2021-04-22","2021-04-23",	"2021-04-25","2021-04-26",
+    $dateval = array("2021-04-16","2021-04-19","2021-04-20","2021-04-21","2021-04-22","2021-04-23","2021-04-25","2021-04-26",
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30");
     $count = array_fill(0, count($dateval), '0');
+	  
     $time = "12:30 น.";
     $limit = 100;
 
     $SQL = "SELECT appoint_date , count(id) AS counter
                 FROM vaccine_app
+		WHERE input_date > '2021-04-17'
                 GROUP BY appoint_date";
     $result = mysqli_query($conn,$SQL);
     if (mysqli_num_rows($result) > 0) {
@@ -181,7 +183,13 @@
         $datemonth = "พ.ค.";
         break;
       }
-      $datetext = $datesplit[2]." ".$datemonth." ".$time;
+	if($datesplit[2] = 25){
+	$datetext = $datesplit[2]." ".$datemonth." 8.30 น.";
+	}
+	else{
+	$datetext = $datesplit[2]." ".$datemonth." ".$time;
+	}
+      
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
       }
     }
