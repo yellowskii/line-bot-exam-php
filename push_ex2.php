@@ -57,6 +57,7 @@ $msg = "ผู้ที่จองวัคซีนออนไลน์ ใ�
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 
 $g=0;
 for($j=0;$j<=$set;$j++){
@@ -69,15 +70,17 @@ $g = $g+1;
 echo $i." ".$usr_array[$j][$i]." ".$g."<br>"; 
 
 }
-}    
-/*
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
-$response = $bot->multicast($usr_array, $textMessageBuilder);
+    $response = $bot->multicast($usr_array[$j], $textMessageBuilder);
 if ($response->isSucceeded()){
     echo "สำเร็จ";
     echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
     return;
 }
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-*/
+    
+}    
+
+
+
+
 ?>
