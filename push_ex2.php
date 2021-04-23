@@ -58,9 +58,12 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
-$num = 500;
+
 for($j=0;$j<=$set;$j++){
-echo "SET".$j."<br>";     
+echo "SET".$j."<br>";   
+    
+ $num = count($usr_array[$j]);
+    
 for($i=0;$i<$num;$i++){
 
 echo $i." ".$usr_array[$j][$i]."<br>"; 
