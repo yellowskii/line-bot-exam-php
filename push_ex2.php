@@ -22,16 +22,22 @@ $channelSecret = '977670d76e802dffac5da90001614136';
       echo "Connection Error. ".mysqli_connect_error();
   }
     mysqli_set_charset($conn, "utf8");
-
+    $count = 0;
+    $set = 0;
     $strSQL = "SELECT DISTINCT userID FROM vaccine_app ";
 
-    $usr_array = array();
+    $usr_array = array(array());
     $result = mysqli_query($conn,$strSQL);
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_array($result)) {
             if($row["0"] != ""){ 
-            array_push($usr_array , $row["0"]);
+                   if($count => 500 ){
+                        $set++;
+                       $count = 0;
+                   }
+            array_push($usr_array[$set] , $row["0"]);
+            $count++;
             }
         }
     } else {
@@ -52,13 +58,15 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 
-$num = count($usr_array);
-
+$num = 500;
+for($j=0;$j<$set;$j++){
+echo "SET".$j."<br>";     
 for($i=0;$i<$num;$i++){
 
-echo $i." ".$usr_array[$i]."<br>"; 
+echo $i." ".$usr_array[$j][$i]."<br>"; 
 
 }
+}    
 /*
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->multicast($usr_array, $textMessageBuilder);
