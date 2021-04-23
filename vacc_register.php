@@ -40,7 +40,7 @@
 
     <h1 class="text-center">ลงทะเบียนวัคซีน</h1>
 
-          <form id="myform" action=".php" method="post">
+          <form id="myform" action="vacc_save.php" method="post">
 
   <input type="hidden" class="form-control" name="uid" id="uid" required>
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
