@@ -45,9 +45,9 @@
   <input type="hidden" class="form-control" name="uid" id="uid" required>
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
 		  
-		  <div class="text-center text-danger">
+		  <h1 class="text-center text-danger">
 			เนื่องจากคิววัคซีนในล็อตนี้ทั้งหมดถูกจองเต็มแล้ว ขออภัยในความไม่สะดวกค่ะ	  
-		</div>
+		</h1>
 <!--
 <div class="input-group">
 <label  class="col-4 col-form-label" for="name">ชื่อ </label>
