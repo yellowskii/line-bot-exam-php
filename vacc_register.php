@@ -183,7 +183,7 @@
         $datemonth = "พ.ค.";
         break;
       }
-	if($datesplit[2] = 25){
+	if($datesplit[2] == 25){
 	$datetext = $datesplit[2]." ".$datemonth." 8.30 น.";
 	}
 	else{
