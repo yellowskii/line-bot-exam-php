@@ -44,7 +44,11 @@
 
   <input type="hidden" class="form-control" name="uid" id="uid" required>
   <input type="hidden" class="form-control" name="uprofile" id="uprofile" required>
-
+		  
+		  <div class="text-center text-danger">
+			เนื่องจากคิววัคซีนในล็อตนี้ทั้งหมดถูกจองเต็มแล้ว ขออภัยในความไม่สะดวกค่ะ	  
+		</div>
+<!--
 <div class="input-group">
 <label  class="col-4 col-form-label" for="name">ชื่อ </label>
 <div class="col-8">
@@ -136,7 +140,7 @@
     <option value="" selected>กรุณาเลือก</option>
     <?php
 
-
+/*
 
     $dateval = array("2021-04-25","2021-04-26",
                   "2021-04-27","2021-04-28","2021-04-29","2021-04-30");
@@ -192,7 +196,7 @@
       
       echo "<option value='".$dateval[$i]."'>".$datetext."</option>";
       }
-    }
+    }*/
      ?>
   </select>
 </div>
@@ -205,6 +209,7 @@
     <div class="text-center">
       <button type="button" id="closebutton" class="btn btn-danger">ปิด</button>
     </div>
+-->
 		</form>
 
 
