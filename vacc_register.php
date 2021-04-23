@@ -137,7 +137,8 @@
 <label  class="col-4" for="appoint_date">วันจอง</label>
 <div class="col-8">
   <select class="custom-select custom-select-lg mb-2" id="appoint_date" name="appoint_date" required>
-    <option value="" selected>กรุณาเลือก</option>
+    <option value="" selected>กรุณาเลือก</option> 
+-->
     <?php
 
 /*
@@ -198,6 +199,7 @@
       }
     }*/
      ?>
+		  <!--
   </select>
 </div>
 </div>
