@@ -55,7 +55,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 
 $g=0;
-for($j=1;$j<=$set;$j++){
+for($j=0;$j<=$set;$j++){
 echo "SET".$j."<br>";   
     
  $num = count($usr_array[$j]);
